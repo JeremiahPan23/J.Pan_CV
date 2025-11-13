@@ -1,0 +1,20 @@
+# Ignore any temporary files
+*.tmp
+*.temp
+
+# Ignore log files
+*.log
+
+# Ignore node_modules if using npm
+node_modules/
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

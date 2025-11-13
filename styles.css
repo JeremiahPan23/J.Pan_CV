@@ -1,0 +1,299 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.photo-section {
+    flex-shrink: 0;
+}
+
+#profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3498db;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.personal-details {
+    text-align: left;
+    max-width: 600px;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #3498db;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+/* Section Styles */
+section {
+    margin: 40px 0;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Summary Section */
+.summary p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Education Section */
+.education-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.education-logo {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.education-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.education-details {
+    flex: 1;
+}
+
+.education-item h3 {
+    font-size: 1.3rem;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.institution {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.date {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+/* Experience Section */
+.experience-item {
+    margin-bottom: 30px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.experience-header h3 {
+    font-size: 1.3rem;
+    color: #3498db;
+}
+
+.experience-header .company {
+    font-weight: bold;
+    color: #555;
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.experience-item li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-category h3 {
+    font-size: 1.2rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.skill-category li {
+    margin-bottom: 5px;
+}
+
+/* Projects Section */
+.project-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.project-item h3 {
+    font-size: 1.3rem;
+    color: #3498db;
+    margin-bottom: 8px;
+}
+
+.tech-stack {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .personal-details {
+        text-align: center;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .education-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .education-logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 15px;
+        margin: 20px 0;
+    }
+}
