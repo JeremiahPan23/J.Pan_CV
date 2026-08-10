@@ -1,4 +1,4 @@
-# Jeremy's CV Webpage
+# Jeremiah's CV Webpage
 
 A professional and modern CV webpage built with HTML, CSS, and JavaScript.
 
