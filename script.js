@@ -94,6 +94,33 @@
             });
         });
 
+        // Anti-spam: reconstruct email from split data attributes (defeats simple mailto scrapers)
+        document.querySelectorAll('.email-link').forEach(link => {
+            const user = link.dataset.user;
+            const domain = link.dataset.domain;
+            if (user && domain) {
+                const email = user + '@' + domain;
+                link.href = 'mailto:' + email;
+                const textEl = link.querySelector('.email-text');
+                if (textEl) textEl.textContent = email;
+            }
+        });
+
+        // "Read More" links switch to the target tab (e.g. from Overview to Research)
+        document.querySelectorAll('.read-more-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const tabId = link.dataset.tab;
+                if (tabId && VALID_TABS.includes(tabId)) {
+                    e.preventDefault();
+                    switchTab(tabId, true);
+                    // Scroll to top of the tab area so the new content is visible
+                    requestAnimationFrame(() => {
+                        document.querySelector('.tab-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+                }
+            });
+        });
+
         // Hash change — allows browser back/forward to work
         window.addEventListener('hashchange', () => {
             const target = getInitialTab();

@@ -21,13 +21,13 @@
                     <img src="images/profile_photo.png" alt="Jiaxin Pan" id="profile-photo">
                 </div>
                 <div class="hero-text">
-                    <h1 class="hero-name">Jiaxin<span class="name-divider">·</span>Jeremiah Pan</h1>
+                    <h1 class="hero-name">Jiaxin (Jeremiah) Pan</h1>
                     <p class="hero-title">Physics &amp; Artificial Intelligence Researcher</p>
-                    <p class="hero-tagline">Undergraduate at CUHK-Shenzhen · Quantum Physics · Generative AI · LLM Reasoning</p>
+                    <p class="hero-tagline">Undergraduate Researcher at CUHK-Shenzhen · Physics · AI</p>
                     <div class="contact-chips">
-                        <a class="chip" href="mailto:JiaxinPan@link.cuhk.edu.cn" aria-label="Email">
+                        <a class="chip email-link" data-user="JiaxinPan" data-domain="link.cuhk.edu.cn" href="#" aria-label="Email">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                            <span>JiaxinPan@link.cuhk.edu.cn</span>
+                            <span class="email-text">JiaxinPan [at] link.cuhk.edu.cn</span>
                         </a>
                         <a class="chip" href="https://github.com/JeremiahPan23" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.69-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.48.11-3.08 0 0 .97-.31 3.19 1.18a11.04 11.04 0 0 1 5.81 0c2.22-1.49 3.19-1.18 3.19-1.18.63 1.6.23 2.78.11 3.08.75.81 1.2 1.84 1.2 3.1 0 4.43-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
@@ -44,19 +44,19 @@
 
         <!-- ───────────── Tab Navigation ───────────── -->
         <nav class="tab-nav" role="tablist" aria-label="Portfolio sections">
-            <button class="tab-btn active" data-tab="overview" role="tab" aria-selected="true">
+            <button id="tab-overview" class="tab-btn active" data-tab="overview" role="tab" aria-selected="true" aria-controls="overview">
                 <span class="tab-icon">◎</span>Overview
             </button>
-            <button class="tab-btn" data-tab="education" role="tab" aria-selected="false">
+            <button id="tab-education" class="tab-btn" data-tab="education" role="tab" aria-selected="false" aria-controls="education">
                 <span class="tab-icon">◈</span>Education &amp; Exchange
             </button>
-            <button class="tab-btn" data-tab="research" role="tab" aria-selected="false">
+            <button id="tab-research" class="tab-btn" data-tab="research" role="tab" aria-selected="false" aria-controls="research">
                 <span class="tab-icon">◇</span>Research Experience
             </button>
-            <button class="tab-btn" data-tab="work" role="tab" aria-selected="false">
+            <button id="tab-work" class="tab-btn" data-tab="work" role="tab" aria-selected="false" aria-controls="work">
                 <span class="tab-icon">◆</span>Work &amp; Leadership
             </button>
-            <button class="tab-btn" data-tab="skills" role="tab" aria-selected="false">
+            <button id="tab-skills" class="tab-btn" data-tab="skills" role="tab" aria-selected="false" aria-controls="skills">
                 <span class="tab-icon">◯</span>Skills &amp; Honours
             </button>
             <div class="tab-indicator" aria-hidden="true"></div>
@@ -66,15 +66,15 @@
         <main>
 
             <!-- ══════════════════════════════════ OVERVIEW ══════════════════════════════════ -->
-            <section class="tab-panel active" id="overview" role="tabpanel" aria-label="Overview">
+            <section class="tab-panel active" id="overview" role="tabpanel" aria-labelledby="tab-overview">
 
                 <!-- Bio -->
 <div class="card bio-card">
     <p class="bio-text">
-        I am an undergraduate student (2023 cohort) majoring in Physics at <strong>The Chinese University of Hong Kong, Shenzhen</strong>, specializing in <strong>AI for Science (AI4S)</strong> and <strong>Generative AI</strong>. Leveraging a rigorous physics foundation in statistical mechanics, I bring a unique physical intuition to theoretical AI research—ranging from developing Flow Matching algorithms to accelerate MCMC sampling (overcoming critical slowing down), to LLM reasoning optimization. My extensive research trajectory also spans hands-on 2D electronics and quantum physics to frontier Machine Learning and AI LLMs. I have also served as an <strong>Undergraduate Course Tutor</strong> and have been recognized with multiple <strong>Shaw College Awards</strong> and multiple <strong>Dean's List</strong> honours.
+        I am a Physics undergraduate (2023 cohort) at <strong>The Chinese University of Hong Kong, Shenzhen</strong>, specializing in <strong>AI for Science (AI4S)</strong> and <strong>Generative AI</strong>. Leveraging a rigorous foundation in statistical mechanics, I bring a unique physical intuition to theoretical AI research—from developing Flow Matching algorithms that overcome critical slowing down in MCMC sampling, to optimizing LLM reasoning.
     </p>
     <p class="bio-text">
-        I have 2 study abroad experiences in the <strong>USA (UC-Berkeley)</strong> and <strong>New Zealand (University of Auckland)</strong> during my Bachelor years.
+        My academic journey also includes hands-on experience in 2D electronics and quantum physics, alongside visiting studies at UC Berkeley and the University of Auckland. Beyond research, I am actively engaged as an <strong>Undergraduate Course Tutor</strong> and am a multi-year recipient of the <strong>Dean's List</strong> honour and College Scholarships.
     </p>
 </div>
 
@@ -145,18 +145,19 @@
                         </div>
                         <p class="muted">CUHK-SZ · Prof. ZHOU Kai's Group</p>
                         <ul class="clean-list">
-                            <li><strong>Theoretical Foundation:</strong> Formulated the mathematical connection between SDEs and Diffusion Models, simulating 1D Double-well systems to map transition states from entropy to data manifolds.</li>
-                            <li><strong>Lattice Field Theory &amp; MCMC Acceleration:</strong> Tackling Critical Slowing Down (CSD) in the 2D XY Model near the BKT transition (T ≈ 0.89) by proposing generative models as proposals for Independence Metropolis-Hastings (IMH) to achieve Data-free (SPS) sampling.</li>
-                            <li><strong>Architecture Engineering:</strong> Designed and trained a 6-layer AdaLN-Zero <strong>Diffusion Transformer (DiT)</strong> integrated with a differentiable <code>VorticityExtractor</code> inductive bias to explicitly monitor and preserve topological vortex-antivortex constraints.</li>
-                            <li><strong>Riemannian Flow Matching:</strong> Identified and resolved topological tearing (divergent energy penalties) caused by Euclidean ODE integration and S¹ projection artifacts. Transitioned the paradigm to Angle-Space (Torus) Flow Matching, predicting scalar angular velocity (dθ/dt) to strictly preserve topological invariants.</li>
-                            <li><strong>Comprehensive Physics Evaluation:</strong> Developed a robust physical benchmark suite independently evaluating absolute vortex density, energy density, spin-spin correlation decay (η exponent), and IMH acceptance rate against Wolff cluster algorithm ground truths.</li>
+                            <li><strong>Lattice Field Theory &amp; MCMC Acceleration:</strong> Tackling Critical Slowing Down (CSD) in the 2D XY Model near the BKT transition by proposing generative models as proposals for <strong>Independence Metropolis-Hastings (IMH)</strong> to achieve Data-free (SPS) sampling.</li>
+                            <li><strong>Architecture Engineering:</strong> Designed and trained a 6-layer AdaLN-Zero <strong>Diffusion Transformer (DiT)</strong> integrated with a differentiable <code>VorticityExtractor</code> inductive bias to preserve topological vortex-antivortex constraints.</li>
+                            <li><strong>Riemannian Flow Matching:</strong> Resolved topological tearing caused by Euclidean ODE integration; transitioned to Angle-Space (Torus) Flow Matching, predicting scalar angular velocity (dθ/dt) to strictly preserve topological invariants.</li>
                         </ul>
+                        <div class="cert-link">
+                            <a href="#" class="read-more-link" data-tab="research">Read More in Research Experience →</a>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- ══════════════════════════════════ EDUCATION & EXCHANGE ══════════════════════════════════ -->
-            <section class="tab-panel" id="education" role="tabpanel" aria-label="Education and Exchange" hidden>
+            <section class="tab-panel" id="education" role="tabpanel" aria-labelledby="tab-education" hidden>
 
                 <h2 class="section-title">Education</h2>
 
@@ -180,11 +181,11 @@
                     </div>
                     <div class="card-body">
                         <div class="card-header-row">
-                            <h3>B.B.A. in Economics (Transferred to B.Sc. Physics)</h3>
+                            <h3>B.B.A. in Economics</h3>
                             <span class="pill">2023 – 2024</span>
                         </div>
                         <p class="muted">The Chinese University of Hong Kong, Shenzhen</p>
-                        <p>Completed Year 1; transferred to Physics program in 2024.</p>
+                        <p>Completed Year 1 foundation courses before transferring to the B.Sc. Physics program to pursue my passion for sciences.</p>
                     </div>
                 </div>
 
@@ -233,7 +234,7 @@
             </section>
 
             <!-- ══════════════════════════════════ RESEARCH EXPERIENCE ══════════════════════════════════ -->
-            <section class="tab-panel" id="research" role="tabpanel" aria-label="Research Experience" hidden>
+            <section class="tab-panel" id="research" role="tabpanel" aria-labelledby="tab-research" hidden>
 
                 <!-- Senior Thesis / Working Paper -->
                 <h2 class="section-title">Senior Thesis / Working Paper</h2>
@@ -345,7 +346,7 @@
             </section>
 
             <!-- ══════════════════════════════════ WORK & LEADERSHIP ══════════════════════════════════ -->
-            <section class="tab-panel" id="work" role="tabpanel" aria-label="Work and Leadership" hidden>
+            <section class="tab-panel" id="work" role="tabpanel" aria-labelledby="tab-work" hidden>
 
                 <h2 class="section-title">Work Experience</h2>
 
@@ -469,7 +470,7 @@
             </section>
 
             <!-- ══════════════════════════════════ SKILLS & CERTIFICATIONS ══════════════════════════════════ -->
-            <section class="tab-panel" id="skills" role="tabpanel" aria-label="Skills and Honours" hidden>
+            <section class="tab-panel" id="skills" role="tabpanel" aria-labelledby="tab-skills" hidden>
 
                 <!-- IT Skills -->
                 <h2 class="section-title">IT Skills</h2>

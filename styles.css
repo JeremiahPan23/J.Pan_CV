@@ -216,7 +216,7 @@ a:hover {
     border-color: var(--color-accent);
     background-color: var(--color-accent-soft);
     color: var(--color-primary);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-xs);
 }
 
@@ -266,6 +266,8 @@ a:hover {
 .tab-btn:hover {
     color: var(--color-primary);
     background-color: var(--color-surface-alt);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xs);
 }
 
 .tab-btn.active {
@@ -504,7 +506,7 @@ main {
     border-color: var(--color-accent);
     background-color: var(--color-accent-soft);
     color: var(--color-primary);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 /* ═══════════════════════════════════════════════════════════════
