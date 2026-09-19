@@ -71,7 +71,7 @@
                 <!-- Bio -->
 <div class="card bio-card">
     <p class="bio-text">
-        I am an undergraduate researcher in Physics at <strong>The Chinese University of Hong Kong, Shenzhen</strong>, specializing in <strong>AI for Science (AI4S)</strong> and <strong>Generative AI</strong>. Leveraging a rigorous physics foundation in stochastic dynamics, dissipative systems, and statistical mechanics, I bring a unique physical intuition to theoretical AI research—ranging from mathematical formulations of Diffusion Models (SDEs & Score Matching) to LLM reasoning optimization. My extensive research trajectory spans hands-on 2D electronics and quantum physics to frontier Machine Learning. I also serve as an <strong>Undergraduate Teaching Fellow</strong> and have been recognized with the <strong>Shaw Overcoming Adversity Award</strong> and multiple <strong>Dean's List</strong> honors.
+        I am an undergraduate researcher in Physics at <strong>The Chinese University of Hong Kong, Shenzhen</strong>, specializing in <strong>AI for Science (AI4S)</strong> and <strong>Generative AI</strong>. Leveraging a rigorous physics foundation in stochastic dynamics, dissipative systems, and statistical mechanics, I bring a unique physical intuition to theoretical AI research—ranging from developing Flow Matching algorithms to accelerate MCMC sampling (overcoming critical slowing down), to LLM reasoning optimization. My extensive research trajectory spans hands-on 2D electronics and quantum physics to frontier Machine Learning. I also serve as an <strong>Undergraduate Teaching Fellow</strong> and have been recognized with the <strong>Shaw Overcoming Adversity Award</strong> and multiple <strong>Dean's List</strong> honors.
     </p>
 </div>
 
@@ -81,12 +81,14 @@
     <div class="badge-row">
         <span class="badge">AI for Science (AI4S)</span>
         <span class="badge">Generative AI</span>
-        <span class="badge">Diffusion Models</span>
+        <span class="badge">Diffusion &amp; Flow Matching</span>
+        <span class="badge">Lattice Field Theory</span>
+        <span class="badge">MCMC Acceleration</span>
+        <span class="badge">Topological Dynamics</span>
         <span class="badge">LLM Reasoning</span>
-        <span class="badge">Stochastic Dynamics</span>
         <span class="badge">Quantum Physics</span>
         <span class="badge">Physics-Driven ML</span>
-        <span class="badge">Teaching Fellow & Leadership</span>
+        <span class="badge">Teaching Fellow &amp; Leadership</span>
     </div>
 </div>
 
@@ -242,6 +244,22 @@
             <!-- ══════════════════════════════════ RESEARCH EXPERIENCE ══════════════════════════════════ -->
             <section class="tab-panel" id="research" role="tabpanel" aria-label="Research Experience" hidden>
 
+                <!-- Senior Thesis / Working Paper -->
+                <h2 class="section-title">Senior Thesis / Working Paper</h2>
+
+                <div class="card research-card">
+                    <div class="card-body">
+                        <div class="card-header-row">
+                            <h3>Solving Topological Freezing in 2D XY Model via Angle-Space Flow Matching</h3>
+                            <span class="pill">In Progress</span>
+                        </div>
+                        <p class="muted">B.Sc. Graduation Thesis · Advised by Prof. ZHOU Kai</p>
+                        <p style="margin-top:10px;">
+                            Investigating the failure modes of Stochastic Path Samplers (SPS) in continuous O(2) symmetric models. Proposing a transition from Euclidean SDEs to deterministic, Torus-manifold Flow Matching to eliminate truncation-induced topological tearing (isolated vortices), aiming to restore Independence Metropolis-Hastings (IMH) acceptance rates and achieve a fully data-free generative paradigm.
+                        </p>
+                    </div>
+                </div>
+
                 <h2 class="section-title">Research Experience</h2>
 
                 <div class="card research-card">
@@ -320,15 +338,16 @@
                 <div class="card research-card">
                     <div class="card-body">
                         <div class="card-header-row">
-                            <h3>Guided Research on Generative AI (Diffusion Models)</h3>
+                            <h3>Guided Research on Generative AI (Diffusion &amp; Flow Matching)</h3>
                             <span class="pill">2025 – Present</span>
                         </div>
                         <p class="muted">CUHK-SZ · Prof. ZHOU Kai's Group</p>
                         <ul class="clean-list">
-                            <li><strong>Formulated</strong> the mathematical connection between <strong>Stochastic Differential Equations (SDEs)</strong> and Diffusion Models; independently derived the objective function for <strong>Denoising Score Matching (DSM)</strong>.</li>
-                            <li><strong>Simulated</strong> complex 1D Double-well Potential systems by developing a Diffusion framework, <strong>achieving</strong> clear visualisation of transition states from entropy to data manifolds.</li>
-                            <li><strong>Analysed</strong> the generative process as a <strong>Dissipative Dynamical System</strong>; utilised the learned Score Field to identify stable <strong>Attractors</strong> and assessed local stability via Jacobian matrices.</li>
-                            <li><strong>Validated</strong> model accuracy by comparing generated steady-state distributions with the ground-truth <strong>Gibbs Distribution</strong> using Langevin Dynamics.</li>
+                            <li><strong>Theoretical Foundation:</strong> Formulated the mathematical connection between SDEs and Diffusion Models, simulating 1D Double-well systems to map transition states from entropy to data manifolds.</li>
+                            <li><strong>Lattice Field Theory &amp; MCMC Acceleration:</strong> Tackling Critical Slowing Down (CSD) in the 2D XY Model near the BKT transition (T ≈ 0.89) by proposing generative models as proposals for Independence Metropolis-Hastings (IMH) to achieve Data-free (SPS) sampling.</li>
+                            <li><strong>Architecture Engineering:</strong> Designed and trained a 6-layer AdaLN-Zero <strong>Diffusion Transformer (DiT)</strong> integrated with a differentiable <code>VorticityExtractor</code> inductive bias to explicitly monitor and preserve topological vortex-antivortex constraints.</li>
+                            <li><strong>Riemannian Flow Matching:</strong> Identified and resolved topological tearing (divergent energy penalties) caused by Euclidean ODE integration and S¹ projection artifacts. Transitioned the paradigm to Angle-Space (Torus) Flow Matching, predicting scalar angular velocity (dθ/dt) to strictly preserve topological invariants.</li>
+                            <li><strong>Comprehensive Physics Evaluation:</strong> Developed a robust physical benchmark suite independently evaluating absolute vortex density, energy density, spin-spin correlation decay (η exponent), and IMH acceptance rate against Wolff cluster algorithm ground truths.</li>
                         </ul>
                     </div>
                 </div>
