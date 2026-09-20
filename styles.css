@@ -383,6 +383,10 @@ main {
     object-fit: contain;
 }
 
+.card-logo--dark {
+    background-color: var(--color-primary);
+}
+
 .card-body {
     flex: 1;
     min-width: 0;
@@ -606,7 +610,7 @@ main {
 
 .footer p {
     font-size: 0.8rem;
-    color: var(--color-text-subtle);
+    color: var(--color-text-muted);
 }
 
 /* ═══════════════════════════════════════════════════════════════
