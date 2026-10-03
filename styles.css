@@ -57,6 +57,8 @@ main { min-height:65vh; }
 .certification-summary h3 { color:var(--color-primary); font-size:21px; font-weight:500; }
 .certification-summary p { margin-top:4px; font-size:13px; color:var(--color-muted); }
 .certification-summary .cert-link { flex-shrink:0; }
+.certification-identity { display:flex; align-items:center; gap:22px; min-width:0; }
+.certification-logo { width:90px; flex-shrink:0; height:auto; }
 .project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:38px; }
 .featured-project { display:grid; grid-template-columns:.8fr 1fr; gap:22px; min-width:0; }
 .project-image { display:block; position:relative; min-height:220px; background:#f0f1ed; overflow:hidden; }
@@ -88,6 +90,15 @@ main { min-height:65vh; }
 .card-logo--huawei img { width:100px; }
 .credential-wordmark { margin-bottom:20px; }
 .credential-wordmark img { width:340px; max-width:100%; height:auto; }
+.card-logo--brand { flex-basis:100px; width:100px; padding:0; }
+.card-logo--brand img { width:100px; }
+.credential-wordmark--dark { width:420px; max-width:100%; background:var(--color-primary); padding:12px; border-radius:3px; }
+.credential-wordmark--dark img { width:100%; }
+.conference-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:24px; }
+.conference-gallery>a { display:block; background:#eef0ed; }
+.conference-gallery img { width:100%; height:auto; }
+.conference-gallery figcaption { grid-column:1/-1; }
+.conference-gallery .gallery-caption { font-size:11px; color:var(--color-muted); }
 .pill { font-size:9px; padding:4px 10px; border:1px solid var(--color-border); border-radius:20px; white-space:nowrap; color:var(--color-muted); font-weight:400; }
 .badge-row { display:flex; flex-wrap:wrap; gap:8px; }
 .badge { font-size:11px; padding:5px 10px; border:1px solid var(--color-border); color:var(--color-muted); }
@@ -132,6 +143,8 @@ html[lang='zh-Hans'] .hero-name { letter-spacing:1px; }
 .site-brand { font-size:clamp(16px,4.4vw,21px); letter-spacing:-.6px; }
 .language-switch { gap:6px; padding:3px 9px; }
 .certification-summary { align-items:flex-start; flex-direction:column; gap:12px; }
+.certification-identity { gap:16px; } .certification-logo { width:70px; }
+.conference-gallery { grid-template-columns:1fr; }
 .container { padding:0 24px; } .hero { display:flex; flex-direction:column; align-items:stretch; padding:44px 0 25px; }
 .eyebrow { font-size:9px; margin-bottom:23px; } .hero-headline { font-size:clamp(32px,8.5vw,44px); letter-spacing:-1.6px; }
 .hero-name { margin-top:24px; } .hero-visual { margin-top:18px; height:245px; } .visual-caption { bottom:0; }
@@ -145,6 +158,7 @@ html[lang='zh-Hans'] .hero-name { letter-spacing:1px; }
 .card-logo { flex-basis:40px; width:40px; height:40px; padding:3px; } .card-logo img { max-height:35px; }
 .card-logo--sme,.card-logo--huawei { flex-basis:70px; width:70px; padding:0; }
 .card-logo--sme img,.card-logo--huawei img { width:70px; max-height:40px; }
+.card-logo--brand { flex-basis:70px; width:70px; padding:0; } .card-logo--brand img { width:70px; max-height:40px; }
 .tab-panel { padding-top:36px; scroll-margin-top:115px; } .footer { margin-top:40px; padding-bottom:22px; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } }

@@ -3,6 +3,7 @@
  */
 window.PORTFOLIO_ZH = {
     copy: {
+        'URC2026 — Presentation photographs. Select a photo to view it at full size.': 'URC2026 报告现场照片。点击照片可查看原图。',
         'Four-year honours degree programme with a required research thesis.': '四年制荣誉学士学位课程，毕业须完成科研毕业论文。',
         'View Help Room Certificate →': '查看学生答疑室服务证书 →',
         'View Award Certificate →': '查看获奖证书 →',
@@ -211,6 +212,18 @@ window.PORTFOLIO_ZH = {
         'CUHK-Shenzhen School of Management and Economics Logo': '香港中文大学（深圳）经管学院标志',
         'CUHK-Shenzhen School of Science and Engineering Logo': '香港中文大学（深圳）理工学院标志',
         'Huawei Logo': '华为标志',
+        'INSAIT Logo': 'INSAIT 标志',
+        'New Oriental Logo': '新东方标志',
+        'CUHK-Shenzhen School of Humanities and Social Science Logo': '香港中文大学（深圳）人文社科学院标志',
+        'URC2026 presentation photographs': 'URC2026 报告现场照片',
+        'Jiaxin Pan presenting the research aims at URC2026': '潘佳鑫在 URC2026 报告中介绍研究目标',
+        'Jiaxin Pan addressing the audience at URC2026': '潘佳鑫在 URC2026 向听众介绍研究',
+        'Wide view of the presentation room at URC2026': 'URC2026 报告会场全景',
+        'Close-up of Jiaxin Pan during his URC2026 presentation': '潘佳鑫在 URC2026 报告时的近景',
+        'View presentation photo 1 at full size (opens in a new tab)': '查看第 1 张报告照片原图（在新标签页打开）',
+        'View presentation photo 2 at full size (opens in a new tab)': '查看第 2 张报告照片原图（在新标签页打开）',
+        'View presentation photo 3 at full size (opens in a new tab)': '查看第 3 张报告照片原图（在新标签页打开）',
+        'View presentation photo 4 at full size (opens in a new tab)': '查看第 4 张报告照片原图（在新标签页打开）',
         'Chongqing Nankai Secondary School Logo': '重庆南开中学校徽',
         'UC Berkeley Extension Logo': '加州大学伯克利分校 Extension 标志',
         'University of Auckland Logo': '奥克兰大学标志',
