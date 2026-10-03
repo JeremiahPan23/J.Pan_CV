@@ -33,7 +33,7 @@ main { min-height:65vh; }
 .tab-panel.active { animation:reveal .4s ease; }
 .tab-panel:focus,.research-card:focus,#about:focus { outline:none; }
 #overview { padding-top:0; }
-.hero { position:relative; display:grid; grid-template-columns:1.1fr 1fr; align-items:center; min-height:550px; padding:68px 0 56px; gap:24px; }
+.hero { position:relative; display:grid; grid-template-columns:1.06fr 1fr; align-items:center; min-height:650px; padding:54px 0 52px; gap:14px; }
 .hero-text { position:relative; z-index:1; }
 .eyebrow { color:var(--color-muted); font-size:10px; letter-spacing:2.4px; font-weight:500; margin-bottom:28px; }
 .hero-headline { color:var(--color-primary); font-size:clamp(42px,4.2vw,64px); letter-spacing:-2.9px; line-height:1.13; font-weight:400; }
@@ -44,7 +44,7 @@ main { min-height:65vh; }
 .button-primary:hover { background:#343e37; color:#fff; transform:translateY(-2px); }
 .text-link { font-size:12px; color:var(--color-accent); display:inline-block; border-bottom:1px solid #b9ccc6; padding-bottom:3px; }
 .text-link:hover { border-bottom-color:var(--color-accent); }
-.hero-visual { height:460px; position:relative; min-width:0; }
+.hero-visual { height:570px; width:calc(100% + 64px); margin-left:-16px; position:relative; min-width:0; }
 .science-canvas { display:block; width:100%; height:100%; }
 .visual-caption { display:flex; justify-content:space-between; align-items:center; gap:12px; position:absolute; bottom:-12px; left:20px; right:0; }
 .visual-label { font-size:8px; letter-spacing:1.5px; color:var(--color-muted); }
@@ -129,7 +129,7 @@ html[lang='zh-Hans'] .hero-name { letter-spacing:1px; }
 @media (min-width:1500px) { .hero-headline { font-size:64px; } }
 @media (max-width:1150px) {
 .container { padding:0 40px; } .site-header { gap:22px; } .tab-nav { gap:15px; } .tab-btn { font-size:12px; }
-.hero-headline { font-size:46px; letter-spacing:-2px; } .hero { min-height:500px; } .hero-visual { height:410px; }
+.hero-headline { font-size:46px; letter-spacing:-2px; } .hero { min-height:570px; } .hero-visual { height:490px; width:calc(100% + 40px); margin-left:-8px; }
 .featured-project { grid-template-columns:1fr; gap:18px; } .project-image { height:190px; min-height:0; } .project-copy h3 { font-size:19px; }
 }
 @media (max-width:850px) {
@@ -137,7 +137,7 @@ html[lang='zh-Hans'] .hero-name { letter-spacing:1px; }
 .language-switch { margin-left:auto; order:1; } .tab-nav { order:2; flex:0 0 100%; justify-content:flex-start; gap:25px; overflow-x:auto; padding-top:12px; scrollbar-width:none; }
 .tab-nav::-webkit-scrollbar { display:none; } .tab-btn { padding:10px 0 13px; }
 .hero { grid-template-columns:1fr 1fr; gap:0; padding:55px 0 45px; min-height:440px; } .hero-headline { font-size:38px; letter-spacing:-1.7px; }
-.hero-visual { height:340px; } .visual-label { display:none; } .visual-caption { justify-content:flex-end; }
+.hero-visual { height:430px; width:100%; margin-left:0; } .visual-label { display:none; } .visual-caption { justify-content:flex-end; }
 .hero-name { font-size:18px; } .hero-tagline { font-size:12px; } .hero-actions { gap:17px; } .button-primary { padding:11px 17px; gap:15px; }
 .about-section { grid-template-columns:140px 1fr; gap:30px; } .card-header-row h3 { font-size:17px; } .footer p { font-size:10px; }
 }
@@ -149,7 +149,7 @@ html[lang='zh-Hans'] .hero-name { letter-spacing:1px; }
 .conference-gallery { grid-template-columns:1fr; }
 .container { padding:0 24px; } .hero { display:flex; flex-direction:column; align-items:stretch; padding:44px 0 25px; }
 .eyebrow { font-size:9px; margin-bottom:23px; } .hero-headline { font-size:clamp(32px,8.5vw,44px); letter-spacing:-1.6px; }
-.hero-name { margin-top:24px; } .hero-visual { margin-top:18px; height:300px; } .visual-caption { bottom:0; }
+.hero-name { margin-top:24px; } .hero-visual { margin-top:18px; height:400px; } .visual-caption { bottom:0; }
 .section-title { font-size:24px; } .section-heading { gap:10px; margin-bottom:24px; } .project-grid { grid-template-columns:1fr; gap:36px; }
 .featured-project { grid-template-columns:1fr; } .project-image { height:210px; } .project-copy h3 { font-size:19px; }
 .project-category { font-size:9px; } .project-copy>p:not(.project-category) { font-size:13px; }

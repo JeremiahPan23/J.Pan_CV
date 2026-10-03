@@ -34,7 +34,7 @@ English text in `index.html` serves as the translation key. When editing it, upd
 
 The graphics are conceptual artwork, not research outputs or physical simulations. Motion can be paused and respects the system's reduced-motion preference. Rendering stops when the page is hidden or all canvases are outside the viewport. Parallax is restricted to a fine pointer over the hero illustration.
 
-The hero uses one shared camera and continuous lattice: a blue-and-teal spin vortex blends into gently rotating octahedral cells anchored to the same lattice. Shared depth sorting interleaves arrows, crystal facets and bonds. This visual transition is conceptual artwork, not a scientific claim that the XY model transforms into a crystal. The two selected-research cards retain their original renderers. The About Me email is displayed with `[at]` and `[dot]` separators and has no `mailto:` link; this reduces direct harvesting of a literal address but does not prevent a determined crawler from reconstructing it.
+The enlarged hero shows only a 23×23 conceptual XY spin lattice with a moving vortex, rotating arrows, traveling phase modulation and subtle pointer parallax. It uses a dedicated renderer; the two selected-research cards retain their original spin and crystal renderers. The hero is not a depiction of the project's 4×4 experimental system or an actual physical simulation. The About Me email is displayed with `[at]` and `[dot]` separators and has no `mailto:` link; this reduces direct harvesting of a literal address but does not prevent a determined crawler from reconstructing it.
 
 ## Content and publishing
 

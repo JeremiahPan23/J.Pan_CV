@@ -50,7 +50,7 @@ window.PORTFOLIO_ZH = {
         'Exploring compact crystal descriptors, data provenance, rule-based verification, and reproducible evaluation for language-assisted materials research.': '探索用于语言辅助材料研究的紧凑晶体描述符、数据溯源、基于规则的验证与可复现评估。',
         'Explore project →': '了解项目 →',
         'ABOUT ME': '关于我',
-        'SPIN FIELDS / CRYSTAL GEOMETRY': '自旋场 / 晶体几何',
+        '2D XY / SPIN DYNAMICS': '二维 XY / 自旋动态',
         'Pause motion': '暂停动画',
         'Resume motion': '继续动画',
         'I am a Physics undergraduate (Class of 2027) at The Chinese University of Hong Kong, Shenzhen, specializing in AI for Science (AI4S) and Generative AI. I entered the university in 2023 and transferred from Business Economics to Physics in 2024. My research draws on statistical mechanics to study generative sampling in physical systems, interpretable representations for materials research, and language-model reasoning.': '我是<strong>香港中文大学（深圳）</strong>物理学专业本科生，预计于 2027 年毕业，研究兴趣集中于 <strong>AI for Science（科学人工智能，AI4S）</strong>与<strong>生成式 AI</strong>。我于 2023 年入学，并于 2024 年从商业经济学转入物理学。我的研究以统计力学为基础，关注物理系统中的生成采样、材料研究的可解释表征以及语言模型推理。',
@@ -207,7 +207,7 @@ window.PORTFOLIO_ZH = {
     attributes: {
         'Portfolio sections': '个人网站栏目',
         'Language': '语言',
-        'Conceptual animated spin field and rotating crystal geometry': '自旋场与旋转晶体几何的概念性动画',
+        'Conceptual animated two-dimensional XY spin field': '二维 XY 自旋场的概念性动画',
         'Explore the XY model project': '了解 XY 模型项目',
         'Explore the HSSRLM project': '了解 HSSRLM 项目',
         'XY project topics and technologies': 'XY 项目主题与技术',
