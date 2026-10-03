@@ -3,6 +3,7 @@
  */
 window.PORTFOLIO_ZH = {
     copy: {
+        'Four-year honours degree programme with a required research thesis.': '四年制荣誉学士学位课程，毕业须完成科研毕业论文。',
         'View Help Room Certificate →': '查看学生答疑室服务证书 →',
         'View Award Certificate →': '查看获奖证书 →',
         'Professional Certification': '专业认证',
@@ -60,7 +61,7 @@ window.PORTFOLIO_ZH = {
         'Physics-Driven ML': '物理驱动的机器学习（ML）',
         'Teaching Fellow & Leadership': '课程教学与组织实践',
         'Education at a Glance': '教育概览',
-        'B.Sc. in Physics': '物理学理学学士',
+        'B.Sc. in Physics (with honours)': '物理学理学学士（荣誉）',
         'CUHK-Shenzhen · Class of 2027 · transferred from B.B.A. in 2024': '香港中文大学（深圳） · 预计 2027 年毕业 · 2024 年从工商管理专业转入',
         'Visiting Student': '访学学生',
         'University of Auckland · Physics, CS & AI': '奥克兰大学 · 物理、计算机科学与人工智能',
@@ -73,7 +74,7 @@ window.PORTFOLIO_ZH = {
         '2024 (Fall)': '2024 年秋季',
         '2023 (Summer)': '2023 年夏季',
         '2024 – Present': '2024 年至今',
-        'B.Sc. in Physics (Expected)': '物理学理学学士（预计获得）',
+        'B.Sc. in Physics (with honours) — Expected': '物理学理学学士（荣誉，预计获得）',
         'The Chinese University of Hong Kong, Shenzhen': '香港中文大学（深圳）',
         'Transferred from Business Economics in 2024; currently majoring in Physics.': '于 2024 年从商业经济学转入物理学，现就读物理学专业。',
         'B.B.A. in Economics': '经济学工商管理学士专业（转专业前）',
