@@ -18,3 +18,13 @@ node_modules/
 # Ignore OS-specific files
 .DS_Store
 Thumbs.db
+
+# Local rendering artifacts; keep final CV sources and PDFs tracked.
+tmp/
+__pycache__/
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

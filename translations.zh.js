@@ -3,6 +3,12 @@
  */
 window.PORTFOLIO_ZH = {
     copy: {
+        'Research CV · 2 pages →': '研究申请版 CV · 2 页 →',
+        'Comprehensive CV →': '完整版 CV →',
+        'Cumulative GPA: 3.61/4.0.': '累计 GPA：3.61/4.0。',
+        'Evidence-aware preprocessing: Contributed to Crystallographic Information File (CIF)-to-descriptor preprocessing that preserves provenance, separates known, inferred, and missing information, and routes incomplete records for review.': '<strong>保留证据的预处理：</strong>参与 CIF（晶体学信息文件）到描述符的预处理，保留数据来源，区分已知、推断与缺失信息，并将不完整记录转交复核。',
+        'Candidate verification: Contributed to descriptor validation, node/linker/topology connectivity checks, explicit failure reporting, and descriptor-level duplicate tracking.': '<strong>候选验证：</strong>参与描述符验证、节点／连接体／拓扑的连通性检查、明确的失败报告及描述符层面的重复追踪。',
+        'Limited structure audits: Contributed to reproducible structure-equivalence audits on three publicly sourced metal–organic framework (MOF) structures, examining equivalent representations and information lost by coarse descriptors.': '<strong>有限的结构审计：</strong>参与对三个公开来源的 MOF（金属有机框架）结构开展的可复现结构等价性审计，考察等价表示及粗粒度描述符造成的信息损失。',
         'URC2026 — Presentation photographs. Select a photo to view it at full size.': 'URC2026 报告现场照片。点击照片可查看原图。',
         'Four-year honours degree programme with a required research thesis.': '四年制荣誉学士学位课程，毕业须完成科研毕业论文。',
         'View Help Room Certificate →': '查看学生答疑室服务证书 →',
@@ -207,6 +213,7 @@ window.PORTFOLIO_ZH = {
         'XY project topics and technologies': 'XY 项目主题与技术',
         'HSSRLM project topics and technologies': 'HSSRLM 项目主题与技术',
         'Email': '电子邮箱',
+        'Download CV PDFs': '下载 CV PDF',
         'Jiaxin Pan': '潘佳鑫',
         'CUHK-Shenzhen Logo': '香港中文大学（深圳）标志',
         'CUHK-Shenzhen School of Management and Economics Logo': '香港中文大学（深圳）经管学院标志',

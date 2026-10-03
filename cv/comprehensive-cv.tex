@@ -1,0 +1,105 @@
+% Comprehensive CV. Standalone source; content reviewed 2026-10-03.
+% Latest user confirmations override the supplied historical CVs.
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{casual}
+\moderncvcolor{black}
+\usepackage[scale=0.88]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*,nosep,topsep=2pt}
+\setlength{\hintscolumnwidth}{2.3cm}
+\firstname{Jiaxin (Jeremiah)}
+\familyname{Pan}
+\email{JiaxinPan@link.cuhk.edu.cn}
+\social[github]{JeremiahPan23}
+\social[linkedin]{jiaxin-pan-859828344}
+\homepage{jeremiahpan23.github.io/J.Pan_CV/}
+\begin{document}
+\maketitle
+
+\section{Research Profile}
+\cvitem{}{Physics undergraduate working on AI for Science, generative sampling, interpretable materials representations, and language-model reasoning. Research interests connect statistical mechanics with reproducible scientific computing and reliable machine-learning methods.}
+
+\section{Education}
+\cventry{2023--2027}{B.Sc. in Physics (with honours) --- Expected}{The Chinese University of Hong Kong, Shenzhen}{Shenzhen, China}{}{GPA: 3.61/4.0. Four-year honours degree with a required research thesis. Admitted to Economics in 2023; completed Year 1 foundation courses before transferring to the B.Sc. Physics programme in 2024 to pursue my passion for sciences.}
+\cventry{2020--2023}{High School Diploma (Liberal Arts)}{Chongqing Nankai Secondary School}{Chongqing, China}{}{}
+
+\section{Exchange and Visiting Programmes}
+\cventry{2026 (Spring)}{Visiting Student}{University of Auckland}{Auckland, New Zealand}{}{Nominated by CUHK-Shenzhen; completed advanced coursework in Physics, Computer Science, and AI, including COMPSCI 361 and COMPSCI 220.}
+\cventry{2025 (Summer)}{Summer Visiting Student}{University of California, Berkeley Extension}{Berkeley, CA, USA}{}{Completed coursework in physics and neuroscience; developed cross-cultural academic communication and independent learning skills.}
+
+\section{Ongoing Research}
+\cventry{Ongoing}{Data-Free Generative Sampling of the Two-Dimensional XY Model}{Undergraduate Researcher, CUHK-Shenzhen}{}{}{Supervised by Prof. Kai Zhou. Provisional portfolio title, not a finalized thesis title.
+\begin{itemize}
+\item Contributed to adapting Stochastic Path Sampling (SPS) to periodic XY angle variables. Training uses the XY energy and forward/backward path probabilities without pre-generated equilibrium configurations as training data. Generated paths are evaluated with path-space independence Metropolis--Hastings (MH) correction.
+\item Earlier exploration used supervised Flow Matching trained on Wolff-generated configurations. Wolff sampling is an independent validation reference for the current method.
+\item Completed a training-budget comparison across three seeds, 5,000/10,000/15,000 parameter updates, and 32/64/128 generation steps. Python/PyTorch GPU experiments run through Slurm.
+\item Evaluated energy, vortex counts, magnetization, spatial correlations, acceptance, effective sample size per sampling second, and consecutive rejection streaks.
+\item Estimated energy sampling efficiency increased in all nine seed/step settings from 5,000 to 10,000 updates; from 10,000 to 15,000, six improved and three declined. All nine settings at both later checkpoints passed predefined physical-statistics screening criteria; this supports, but does not prove, complete equilibration.
+\item High relative path weights can cause prolonged MH rejection streaks. Acceptance alone does not determine sampling efficiency. Analysis and report preparation are underway.
+\end{itemize}The limited $4\times4$ lattice study at one temperature near the expected Berezinskii--Kosterlitz--Thouless (BKT) transition does not establish thermodynamic critical behavior, a solution to critical slowing down, universal convergence, or an advantage over Wolff. SPS is an existing method.}
+
+\cventry{Ongoing}{Interpretable Crystal Representations for AI-Assisted Materials Design}{HSSRLM --- AI for Science}{}{}{Framework: compact hierarchical descriptors form an interpretable interface between natural language and porous materials, including metal--organic frameworks (MOFs) and zeolites.
+\begin{itemize}
+\item Hierarchical Structure-Sequence Representation (HSSR) organizes composition, lattice parameters, symmetry, topology, building units, and selected pore-related properties into structured text. The repository implements T5 (Text-to-Text Transfer Transformer) infrastructure for bidirectional text/descriptor translation.
+\item Contributed to evidence-aware Crystallographic Information File (CIF)-to-descriptor preprocessing that separates known, inferred, and missing information, preserves provenance, and routes incomplete records for review.
+\item Contributed to multi-candidate screening with descriptor validation, node/linker/topology connectivity checks, explicit failure reporting, and descriptor-level duplicate tracking.
+\item Contributed to reproducible structure-equivalence audits on three publicly sourced MOF structures, examining equivalent representations and information lost by coarse descriptors. This is a limited study, not evidence of universal representation invariance.
+\end{itemize}Framework implementation and targeted reliability audits are complete; broader dataset validation and model evaluation remain in progress. HSSR omits complete atomic coordinates and a full bonding graph, so its outputs are descriptors rather than complete atomistic CIF structures. Verification establishes compatibility with implemented rules, not physical validity or synthesizability. CrysSpec (Crystal Specification) is a provisional working name. The framework also includes a 26-record metal-node registry that addresses ambiguous aliases and preserves source material for continued chemical validation.}
+
+\section{Additional Research Experience}
+\cventry{2026 (Spring)}{Remote Research Assistant}{INSAIT}{Bulgaria / Remote}{}{Under Dr. Jinjin Gu.
+\begin{itemize}
+\item Analysed large language model reasoning and post-training, including Surgical Post-Training (SPOT), implicit regularization, minimal-edit data rectification, and catastrophic forgetting.
+\item Studied the trade-off between reasoning performance and foundational knowledge retention; prepared research syntheses and contributed to seminars.
+\end{itemize}}
+\cventry{2025 (Fall)}{Guided Research on Van der Waals Integration and 2D Electronics}{CUHK-Shenzhen, Prof. Qi Qian's Lab}{}{}{Participated in fabrication and characterization of $\mathrm{MoS}_2$ transistors through van der Waals integration and dry transfer of 2D heterostructures. Studied metal--semiconductor contacts and polarity modulation; gained hands-on nanofabrication and electrical characterization experience, conducted literature review, and prepared an end-of-term report.}
+\cventry{Earlier work}{Guided Research Training in Generative AI and Diffusion Models}{CUHK-Shenzhen, Prof. Kai Zhou's Group}{}{}{Earlier training in score-based generative modelling and physical dynamics.
+\begin{itemize}
+\item Explored connections between stochastic differential equations and diffusion models, including the denoising score-matching objective.
+\item Developed simulations of a one-dimensional double-well potential and visualized generative trajectories.
+\item Analysed learned score fields and local stability using Jacobian matrices; compared Langevin-sampled steady-state distributions with the Gibbs distribution.
+\end{itemize}}
+
+\section{Conference Presentation}
+\cventry{31 Jan 2026}{CUHK-Shenzhen Undergraduate Research Conference (URC2026)}{Second Undergraduate Research Conference}{Shenzhen, China}{}{Presented ``Self-Confidence in Math and STEM Major Choice at CUHK-Shenzhen'' at my first research conference. The study examined the relationship between mathematical self-confidence and STEM major choice. Presentation certificate and on-site photographs are available on the portfolio.}
+
+\section{Course Projects}
+\cventry{2025 (Fall)}{Group Research on Bose--Einstein Condensation}{CUHK-Shenzhen}{}{}{Group leader. Coordinated literature study of ``Observation of Bose-Einstein Condensation in a Dilute Atomic Vapor''; delegated tasks, co-authored \LaTeX{} presentation slides, and delivered the class presentation.}
+\cventry{2025 (Spring)}{Group Research on Bell Test in Quantum Physics}{CUHK-Shenzhen}{}{}{Group leader. Coordinated a study of experimental verification of Bell's theorem; delegated tasks, co-authored the final report, and delivered the presentation.}
+\cventry{2025 (Spring)}{Group Research on Computational Physics: Quantum Harmonic Oscillator}{CUHK-Shenzhen}{}{}{Used finite-difference discretization and matrix eigenvalue methods for the one-dimensional time-independent Schr\"odinger equation. Compared numerical and analytical solutions, examined convergence with grid resolution and domain width, and synthesized team members' results into a final \LaTeX{} report.}
+\cventry{2024 (Fall)}{Group Research on Semiconductor Optical Properties}{CUHK-Shenzhen}{}{}{Group leader. Coordinated a study of semiconductor optical properties; conducted literature review, authored the final report, and delivered the class presentation.}
+
+\section{Teaching and Work Experience}
+\cventry{Oct--Dec 2025}{Undergraduate Student Teaching Fellow (USTF)}{CUHK-Shenzhen School of Science and Engineering}{}{}{Provided tutoring in the Student Help Room, a form of USTF service, for CSC1005 (Introduction to Computer Engineering), CSC1001 (Introduction to Computer Science), and PHY1001 (Mechanics), 23 October--12 December 2025. Help Room certificate available on the portfolio.}
+\cventry{2025--2026}{Study Abroad Student Ambassador}{CUHK-Shenzhen Office of Academic Links}{Australia and New Zealand Group}{}{Served as a liaison between students and OAL for communication, safety reminders, and emergency handling; supported students' academic and living experiences, organized group activities, and contributed to outbound-study sharing sessions. Recognized by OAL for exemplary performance.}
+\cventry{2026 (Spring)}{Study Abroad Instagram Ambassador}{University of Auckland}{Auckland, New Zealand}{}{March--June 2026. Produced multimedia content for the official Study Abroad Instagram account; recognized by the Study Abroad Team as the most prolific ambassador with the highest total likes across posts. Recommendation letter available on the portfolio.}
+\cventry{2023--2025}{Private Tutor}{Self-employed}{}{}{Tutored CET-4, college entrance English, and international middle-school mathematics using the Big Ideas Math curriculum; tailored lesson plans to students' needs.}
+\cventry{2023 (Summer)}{Teaching Assistant}{New Oriental Education and Technology Group}{Chongqing, China}{}{Supported English instruction, classroom management, teaching-material preparation, and communication with parents.}
+
+\section{Honours and Awards}
+\cventry{2023--2026}{Full-Tuition Scholarship}{CUHK-Shenzhen}{}{}{Philip Yu Hong Wong Anita Fung Yee Leung Full-tuition Scholarship. Awarded based on outstanding performance in the 2023 Gaokao.}
+\cventry{2026}{Dean's List}{CUHK-Shenzhen School of Science and Engineering}{}{}{Recognized for academic excellence in AY2025--2026. Certificate pending issuance.}
+\cventry{2025}{Dean's List}{CUHK-Shenzhen School of Science and Engineering}{}{}{Recognized for academic excellence in AY2024--2025.}
+\cventry{2024}{Dean's List}{CUHK-Shenzhen School of Management and Economics}{}{}{Recognized for academic excellence in AY2023--2024.}
+\cventry{2024--2025}{Shaw Overcoming Adversity Award}{CUHK-Shenzhen Shaw College}{}{}{Recognized for resilience and perseverance in overcoming personal and academic challenges.}
+
+\section{Certification}
+\cvitem{2025}{HCIA-AI: Huawei Certified ICT Associate --- Artificial Intelligence. Issued by Huawei Technologies Co., Ltd.; valid through December 2028. Certificate No. 010102001810062372927192.}
+
+\section{Skills}
+\cvitem{Scientific computing}{Python, PyTorch, NumPy, SciPy, Matplotlib, CUDA, Git, \LaTeX; GPU experiment workflows through Slurm. Coursework includes CSC1001 (A grade), CSC1006 (machine-learning concepts), and PHY2650 (team project awarded full marks plus an excellence bonus).}
+\cvitem{Machine learning}{Diffusion models, Flow Matching, and Diffusion Transformers (DiT) for AI-for-Science applications.}
+\cvitem{Collaboration}{Microsoft Word, Excel, PowerPoint, Teams, and Planner.}
+\cvitem{Content creation}{Instagram, WeChat Official Accounts, and TikTok; photo/video editing with iMovie and TikTok Studio.}
+
+\section{Languages}
+\cvitem{English}{Full professional proficiency. TOEFL iBT: 100 (Reading 29, Listening 26, Speaking 23, Writing 22), October 2025.}
+\cvitem{Mandarin}{Native proficiency.}
+\cvitem{Cantonese}{Basic conversational ability.}
+
+\section{Extracurricular Activities}
+\cventry{2024--Present}{CUHKSZ Physical Society}{Management}{}{}{Organized academic events and coordinated internal operations.}
+\cventry{2024--Present}{CUHKSZ Economics Club}{Core Management; Head of Secretary Department}{}{}{Managed documentation, social media content, and event logistics.}
+\cventry{2023--2024}{CUHKSZ Shaw College}{Student Helper}{}{}{Created WeChat content, provided multimedia support, and assisted in campus-event organization.}
+\cventry{2023}{CUHKSZ School of Humanities and Social Sciences}{Research Assistant}{}{}{Supported research documentation through field photography and video editing; assisted professors with data organization.}
+\end{document}

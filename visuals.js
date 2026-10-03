@@ -114,96 +114,124 @@
 
     // The hero has its own artwork; the two research-card renderers stay unchanged.
     const heroCells = [];
-    for (const x of [-.65, .65]) for (const y of [-1.25, 0, 1.25]) for (const z of [-.65, .65]) heroCells.push([x, y, z]);
-    const octahedron = [[.43, 0, 0], [-.43, 0, 0], [0, .43, 0], [0, -.43, 0], [0, 0, .43], [0, 0, -.43]];
+    for (const x of [.6, 1.8, 3]) for (const z of [-1.6, 0, 1.6]) heroCells.push([x, -.55, z]);
+    const octahedron = [[.55, 0, 0], [-.55, 0, 0], [0, .55, 0], [0, -.55, 0], [0, 0, .55], [0, 0, -.55]];
     const octahedronFaces = [[0, 2, 4], [0, 2, 5], [0, 3, 4], [0, 3, 5], [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5]];
 
     function heroArtwork(ctx, w, h, time) {
-        const glow = ctx.createRadialGradient(w * .66, h * .39, 0, w * .58, h * .45, w * .57);
-        glow.addColorStop(0, 'rgba(96,186,214,.14)');
-        glow.addColorStop(.58, 'rgba(158,211,220,.06)');
-        glow.addColorStop(1, 'rgba(158,211,220,0)');
+        // One camera, one connected lattice, one depth order. Both motifs occupy
+        // the same conceptual space; this is artwork, not an XY-to-crystal model.
+        const scale = Math.min(w / 8.8, h / 5.4);
+        const cx = w * .49 + pointer.x * 9;
+        const cy = h * .53 + pointer.y * 6;
+        const yaw = -.34 + .025 * Math.sin(time * .045) + pointer.x * .055;
+        const pitch = .82 + pointer.y * .035;
+        const camera = point => {
+            const p = rotate(point, yaw, pitch);
+            const q = project(p, cx, cy, scale);
+            return { x: q[0], y: q[1], size: q[2], depth: p[2] };
+        };
+        const smooth = (lo, hi, value) => {
+            const t = Math.max(0, Math.min(1, (value - lo) / (hi - lo)));
+            return t * t * (3 - 2 * t);
+        };
+        const primitives = [];
+        const addLine = (a, b, color, alpha, width = .8) => {
+            primitives.push({ kind: 'line', a, b, color, alpha, width, depth: (a.depth + b.depth) / 2 });
+        };
+        const addNode = (p, alpha, radius = 1.8, crystalNode = false) => {
+            primitives.push({ kind: 'node', p, alpha, radius, crystalNode, depth: p.depth });
+        };
+        const glow = ctx.createRadialGradient(w * .54, h * .48, 0, w * .54, h * .48, w * .52);
+        glow.addColorStop(0, 'rgba(125,192,211,.17)');
+        glow.addColorStop(.55, 'rgba(181,215,226,.075)');
+        glow.addColorStop(1, 'rgba(181,215,226,0)');
         ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
 
-        // Deterministic ambient points give depth without distracting flashes.
-        for (let i = 0; i < 48; i++) {
-            const x = w * (.08 + ((i * 37) % 89) / 100) + Math.sin(time * .12 + i) * 4 + pointer.x * 5;
-            const y = h * (.09 + ((i * 23) % 77) / 100) + Math.cos(time * .1 + i) * 4 + pointer.y * 4;
-            const alpha = .09 + .1 * (.5 + .5 * Math.sin(time * .45 + i));
-            ctx.beginPath(); ctx.arc(x, y, i % 5 ? 1.1 : 2, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(48,129,159,${alpha})`; ctx.fill();
-        }
-
-        const spinCx = w * .40 + pointer.x * 13;
-        const spinCy = h * .60 + pointer.y * 9;
-        const spinScale = Math.min(w * .155, h * .19);
         const grid = [];
-        const spinYaw = -.2 + pointer.x * .025;
-        const spinPitch = .88 + pointer.y * .02;
-        for (let row = 0; row < 13; row++) {
+        for (let row = 0; row < 15; row++) {
             const cells = [];
-            for (let col = 0; col < 13; col++) {
-                const x = (col / 12 - .5) * 4;
-                const z = (row / 12 - .5) * 4;
-                cells.push({ x, z, p: project(rotate([x, 0, z], spinYaw, spinPitch), spinCx, spinCy, spinScale) });
+            for (let col = 0; col < 20; col++) {
+                const x = (col - 9.5) * .4;
+                const z = (row - 7) * .4;
+                // Feather the outside of a continuous lattice rather than drawing a panel.
+                const alpha = (1 - smooth(2.5, 3.9, Math.abs(x))) * (1 - smooth(1.7, 2.9, Math.abs(z)));
+                cells.push({ x, z, p: camera([x, 0, z]), alpha });
             }
             grid.push(cells);
         }
-        grid.forEach(row => line(ctx, row.map(cell => cell.p), 'rgba(56,115,144,.16)', .8));
-        for (let col = 0; col < 13; col++) line(ctx, grid.map(row => row[col].p), 'rgba(56,115,144,.16)', .8);
-        grid.flat().forEach(({ x, z, p }) => {
-            ctx.beginPath(); ctx.arc(p[0], p[1], 1.9 * p[2], 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(74,130,151,.36)'; ctx.fill();
-            const angle = Math.atan2(z, x) + time * .32 + .28 * Math.sin(time * .55 + x * .7 - z * .5);
-            const end = project(rotate([x + Math.cos(angle) * .145, 0, z + Math.sin(angle) * .145], spinYaw, spinPitch), spinCx, spinCy, spinScale);
-            const dx = end[0] - p[0], dy = end[1] - p[1];
-            const length = Math.hypot(dx, dy) || 1;
-            const ux = dx / length, uy = dy / length;
-            const head = 5.5 * p[2];
-            const opacity = Math.min(.94, .62 + p[2] * .18);
-            const color = `rgba(25,119,153,${opacity})`;
-            line(ctx, [[p[0] - dx * .72, p[1] - dy * .72], end], color, 1.8 * p[2]);
-            ctx.beginPath(); ctx.moveTo(end[0], end[1]);
-            ctx.lineTo(end[0] - ux * head - uy * head * .55, end[1] - uy * head + ux * head * .55);
-            ctx.lineTo(end[0] - ux * head + uy * head * .55, end[1] - uy * head - ux * head * .55);
-            ctx.closePath(); ctx.fillStyle = color; ctx.fill();
+        grid.forEach((row, r) => row.forEach((cell, c) => {
+            if (c + 1 < row.length) addLine(cell.p, row[c + 1].p, '72,123,159', .24 * Math.min(cell.alpha, row[c + 1].alpha));
+            if (r + 1 < grid.length) addLine(cell.p, grid[r + 1][c].p, '72,123,159', .24 * Math.min(cell.alpha, grid[r + 1][c].alpha));
+            addNode(cell.p, cell.alpha * .39, 1.8);
+            const spinWeight = (1 - smooth(-.2, 1.7, cell.x)) * cell.alpha;
+            if (spinWeight < .015) return;
+            // A slowly turning vortex; the diminishing arrows share crystal anchor sites.
+            const angle = Math.atan2(cell.z - .15, cell.x + 1.25) + Math.PI / 2 + time * .16 + .15 * Math.sin(time * .4 + cell.x - cell.z);
+            const half = .145;
+            const a = camera([cell.x - Math.cos(angle) * half, -.025, cell.z - Math.sin(angle) * half]);
+            const b = camera([cell.x + Math.cos(angle) * half, -.025, cell.z + Math.sin(angle) * half]);
+            primitives.push({ kind: 'arrow', a, b, alpha: .86 * spinWeight, depth: cell.p.depth });
+        }));
+
+        const centers = heroCells.map(cell => camera(cell));
+        heroCells.forEach((cell, i) => {
+            // The lower vertex sits on the exact same ground lattice as the spins.
+            const localYaw = .18 * Math.sin(time * .12 + cell[2] * .25);
+            const rotated = octahedron.map(vertex => rotate(vertex, localYaw, 0).map((v, axis) => v + cell[axis]));
+            const points = rotated.map(camera);
+            const fade = .86 - .09 * cell[2];
+            octahedronFaces.forEach((face, j) => primitives.push({
+                kind: 'face', points: face.map(k => points[k]), alpha: (.10 + (j % 3) * .026) * fade,
+                depth: face.reduce((sum, k) => sum + points[k].depth, 0) / 3
+            }));
+            for (let a = 0; a < 6; a++) for (let b = a + 1; b < 6; b++) {
+                if (Math.floor(a / 2) !== Math.floor(b / 2)) addLine(points[a], points[b], '46,111,172', .64 * fade, 1.05);
+            }
+            points.forEach(p => addNode(p, fade, 2.3, true));
+            addNode(centers[i], .73, 2.5, true);
+            heroCells.forEach((other, j) => {
+                if (j <= i) return;
+                const d = cell.reduce((sum, v, axis) => sum + Math.abs(v - other[axis]), 0);
+                if (d < 1.65) addLine(centers[i], centers[j], '60,120,165', .34, .85);
+            });
         });
 
-        const crystalCx = w * .70 + pointer.x * 14;
-        const crystalCy = h * .40 + pointer.y * 12;
-        const crystalScale = Math.min(w * .165, h * .19);
-        const yaw = .6 + time * .09 + pointer.x * .07;
-        const pitch = -.3 + .07 * Math.sin(time * .09) + pointer.y * .045;
-        const centers = heroCells.map(cell => project(rotate(cell, yaw, pitch), crystalCx, crystalCy, crystalScale));
-        heroCells.forEach((cell, a) => {
-            for (let b = a + 1; b < heroCells.length; b++) {
-                const distance = cell.reduce((sum, value, axis) => sum + Math.abs(value - heroCells[b][axis]), 0);
-                if (distance <= 1.31) line(ctx, [centers[a], centers[b]], 'rgba(42,109,156,.32)', .85);
+        // Shared painter's order keeps crystal edges, lattice and arrows interleaved in depth.
+        primitives.sort((a, b) => b.depth - a.depth);
+        primitives.forEach(item => {
+            const focus = 1 - .25 * smooth(1, 3, item.depth);
+            if (item.kind === 'line') {
+                line(ctx, [[item.a.x, item.a.y], [item.b.x, item.b.y]], `rgba(${item.color},${item.alpha * focus})`, item.width * item.a.size);
+            } else if (item.kind === 'face') {
+                ctx.beginPath(); item.points.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
+                ctx.closePath(); ctx.fillStyle = `rgba(79,151,206,${item.alpha * focus})`; ctx.fill();
+            } else if (item.kind === 'arrow') {
+                const { a, b } = item;
+                const dx = b.x - a.x, dy = b.y - a.y;
+                const length = Math.hypot(dx, dy) || 1;
+                const ux = dx / length, uy = dy / length;
+                const head = Math.min(length * .43, 5.4 * a.size);
+                const color = `rgba(20,126,160,${item.alpha * focus})`;
+                ctx.shadowColor = `rgba(70,185,213,${item.alpha * .25})`; ctx.shadowBlur = 3;
+                line(ctx, [[a.x, a.y], [b.x - ux * head * .55, b.y - uy * head * .55]], color, 1.8 * a.size);
+                ctx.beginPath(); ctx.moveTo(b.x, b.y);
+                ctx.lineTo(b.x - ux * head - uy * head * .5, b.y - uy * head + ux * head * .5);
+                ctx.lineTo(b.x - ux * head + uy * head * .5, b.y - uy * head - ux * head * .5);
+                ctx.closePath(); ctx.fillStyle = color; ctx.fill(); ctx.shadowBlur = 0;
+            } else {
+                const { p } = item;
+                const radius = item.radius * p.size;
+                if (item.crystalNode) {
+                    const halo = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius * 4);
+                    halo.addColorStop(0, `rgba(77,164,210,${item.alpha * .34})`);
+                    halo.addColorStop(1, 'rgba(77,164,210,0)');
+                    ctx.fillStyle = halo; ctx.fillRect(p.x - radius * 4, p.y - radius * 4, radius * 8, radius * 8);
+                }
+                ctx.beginPath(); ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = item.crystalNode ? `rgba(216,239,249,${item.alpha})` : `rgba(83,143,172,${item.alpha * focus})`; ctx.fill();
+                if (item.crystalNode) { ctx.strokeStyle = `rgba(40,109,159,${item.alpha * .85})`; ctx.lineWidth = .8; ctx.stroke(); }
             }
-        });
-        const orderedCells = heroCells.map((cell, index) => ({ cell, index, depth: rotate(cell, yaw, pitch)[2] })).sort((a, b) => b.depth - a.depth);
-        orderedCells.forEach(({ cell, index }) => {
-            const rotated = octahedron.map(vertex => rotate(vertex.map((value, axis) => value + cell[axis]), yaw, pitch));
-            const points = rotated.map(vertex => project(vertex, crystalCx, crystalCy, crystalScale));
-            const faces = octahedronFaces.slice().sort((a, b) => b.reduce((sum, i) => sum + rotated[i][2], 0) - a.reduce((sum, i) => sum + rotated[i][2], 0));
-            faces.forEach((face, faceIndex) => {
-                ctx.beginPath(); face.forEach((i, j) => j ? ctx.lineTo(points[i][0], points[i][1]) : ctx.moveTo(points[i][0], points[i][1]));
-                ctx.closePath(); ctx.fillStyle = `rgba(60,143,191,${.045 + (faceIndex % 3) * .023})`; ctx.fill();
-            });
-            for (let a = 0; a < 6; a++) for (let b = a + 1; b < 6; b++) {
-                if (Math.floor(a / 2) !== Math.floor(b / 2)) line(ctx, [points[a], points[b]], 'rgba(39,107,158,.48)', 1);
-            }
-            points.forEach(p => {
-                const radius = 2.5 * p[2];
-                const halo = ctx.createRadialGradient(p[0], p[1], 0, p[0], p[1], radius * 3.6);
-                halo.addColorStop(0, 'rgba(65,170,207,.35)'); halo.addColorStop(1, 'rgba(65,170,207,0)');
-                ctx.fillStyle = halo; ctx.fillRect(p[0] - radius * 3.6, p[1] - radius * 3.6, radius * 7.2, radius * 7.2);
-                ctx.beginPath(); ctx.arc(p[0], p[1], radius, 0, Math.PI * 2);
-                ctx.fillStyle = '#d6eef2'; ctx.fill(); ctx.strokeStyle = 'rgba(41,116,156,.75)'; ctx.lineWidth = .9; ctx.stroke();
-            });
-            const center = centers[index];
-            ctx.beginPath(); ctx.arc(center[0], center[1], 2 * center[2], 0, Math.PI * 2);
-            ctx.fillStyle = '#378fa8'; ctx.fill();
         });
     }
 
