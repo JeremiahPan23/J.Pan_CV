@@ -3,7 +3,6 @@
  */
 window.PORTFOLIO_ZH = {
     copy: {
-        'Also served as a Student Help Room preceptor, 23 October–12 December 2025.': '另于 2025 年 10 月 23 日至 12 月 12 日担任 Student Help Room（学生答疑室）辅导员。',
         'View Help Room Certificate →': '查看学生答疑室服务证书 →',
         'View Award Certificate →': '查看获奖证书 →',
         'Professional Certification': '专业认证',
@@ -140,7 +139,7 @@ window.PORTFOLIO_ZH = {
         'Work Experience': '工作经历',
         'Undergraduate Student Teaching Fellow (USTF)': '本科生教学助理（Undergraduate Student Teaching Fellow，USTF）',
         'CUHK-SZ School of Science and Engineering': '香港中文大学（深圳）理工学院',
-        'Teaching Fellow for: CSC1005 (Intro. to Computer Engineering), CSC1001 (Intro. to Computer Science), and PHY1001 (Mechanics).': '负责课程辅导：CSC1005（计算机工程导论）、CSC1001（计算机科学导论）和 PHY1001（力学）。',
+        'Provided tutoring in the Student Help Room as a USTF for CSC1005 (Intro. to Computer Engineering), CSC1001 (Intro. to Computer Science), and PHY1001 (Mechanics), 23 October–12 December 2025.': '于 2025 年 10 月 23 日至 12 月 12 日，以本科生教学助理（USTF）身份在 Student Help Room（学生答疑室）为 CSC1005（计算机工程导论）、CSC1001（计算机科学导论）和 PHY1001（力学）提供课程辅导。',
         'Study Abroad Student Ambassador (2026 Outbound Study Programme)': '海外交流学生大使（2026 年境外学习项目）',
         'CUHK-SZ Office of Academic Links (OAL) · Australia & New Zealand Group': '香港中文大学（深圳）学术交流处（Office of Academic Links，OAL） · 澳大利亚与新西兰组',
         'Served as a key liaison between students and the Office of Academic Links in daily communication, safety reminders, and emergency handling.': '在日常沟通、安全提醒及紧急事务处理中，担任学生与学术交流处之间的<strong>主要联络人</strong>。',
@@ -174,7 +173,7 @@ window.PORTFOLIO_ZH = {
         'Programming & Scientific Computing: Python (PyTorch, NumPy, SciPy, Matplotlib), CUDA, Git, and LaTeX — applied in research and coursework (CSC1001: A grade; CSC1006: ML concepts; PHY2650: team project with full marks + bonus for excellence).': '<strong>编程与科学计算：</strong>Python（PyTorch、NumPy、SciPy、Matplotlib）、CUDA、Git 与 LaTeX，应用于研究与课程实践（CSC1001：A；CSC1006：机器学习概念；PHY2650：团队项目满分并获优秀加分）。',
         'Machine Learning & Generative AI: Diffusion models, Flow Matching, and Diffusion Transformers (DiT) for AI-for-Science applications.': '<strong>机器学习与生成式 AI：</strong>面向 AI for Science（科学人工智能）的扩散模型、流匹配（Flow Matching）与扩散 Transformer（Diffusion Transformers，DiT）。',
         'Microsoft Office: Proficient in Word, Excel, PowerPoint, Teams, and Planner for academic and collaborative tasks.': '<strong>Microsoft Office：</strong>熟练使用 Word、Excel、PowerPoint、Teams 与 Planner 完成学术及协作任务。',
-        'Social Media: Experienced in content creation and engagement on Twitter (X), Instagram, Facebook, WeChat, QQ, and TikTok.': '<strong>社交媒体：</strong>具有 Twitter（X）、Instagram、Facebook、微信、QQ 与 TikTok 的内容制作和互动经验。',
+        'Social Media: Experienced in content creation and engagement on Instagram, WeChat Official Accounts, and TikTok.': '<strong>社交媒体：</strong>具有 Instagram、微信公众号和 TikTok 的内容创作与互动经验。',
         'Media Editing: Skilled in iMovie and TikTok Studio for photo and video editing.': '<strong>媒体编辑：</strong>熟练使用 iMovie 与 TikTok Studio 编辑图片和视频。',
         'Language Skills': '语言能力',
         'English: Full professional proficiency. TOEFL iBT Score: 100 (R:29, L:26, S:23, W:22). Oct 2025.': '<strong>英语：</strong>具备完整职业沟通能力。<strong>TOEFL iBT：100 分</strong>（阅读 29、听力 26、口语 23、写作 22），2025 年 10 月。',
