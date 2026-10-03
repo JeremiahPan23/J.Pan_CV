@@ -112,6 +112,101 @@
         ctx.beginPath(); ctx.ellipse(cx, cy + scale * 2.05, scale * 1.25, scale * .13, 0, 0, Math.PI * 2); ctx.fillStyle = 'rgba(56,79,64,.025)'; ctx.fill();
     }
 
+    // The hero has its own artwork; the two research-card renderers stay unchanged.
+    const heroCells = [];
+    for (const x of [-.65, .65]) for (const y of [-1.25, 0, 1.25]) for (const z of [-.65, .65]) heroCells.push([x, y, z]);
+    const octahedron = [[.43, 0, 0], [-.43, 0, 0], [0, .43, 0], [0, -.43, 0], [0, 0, .43], [0, 0, -.43]];
+    const octahedronFaces = [[0, 2, 4], [0, 2, 5], [0, 3, 4], [0, 3, 5], [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5]];
+
+    function heroArtwork(ctx, w, h, time) {
+        const glow = ctx.createRadialGradient(w * .66, h * .39, 0, w * .58, h * .45, w * .57);
+        glow.addColorStop(0, 'rgba(96,186,214,.14)');
+        glow.addColorStop(.58, 'rgba(158,211,220,.06)');
+        glow.addColorStop(1, 'rgba(158,211,220,0)');
+        ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
+
+        // Deterministic ambient points give depth without distracting flashes.
+        for (let i = 0; i < 48; i++) {
+            const x = w * (.08 + ((i * 37) % 89) / 100) + Math.sin(time * .12 + i) * 4 + pointer.x * 5;
+            const y = h * (.09 + ((i * 23) % 77) / 100) + Math.cos(time * .1 + i) * 4 + pointer.y * 4;
+            const alpha = .09 + .1 * (.5 + .5 * Math.sin(time * .45 + i));
+            ctx.beginPath(); ctx.arc(x, y, i % 5 ? 1.1 : 2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(48,129,159,${alpha})`; ctx.fill();
+        }
+
+        const spinCx = w * .40 + pointer.x * 13;
+        const spinCy = h * .60 + pointer.y * 9;
+        const spinScale = Math.min(w * .155, h * .19);
+        const grid = [];
+        const spinYaw = -.2 + pointer.x * .025;
+        const spinPitch = .88 + pointer.y * .02;
+        for (let row = 0; row < 13; row++) {
+            const cells = [];
+            for (let col = 0; col < 13; col++) {
+                const x = (col / 12 - .5) * 4;
+                const z = (row / 12 - .5) * 4;
+                cells.push({ x, z, p: project(rotate([x, 0, z], spinYaw, spinPitch), spinCx, spinCy, spinScale) });
+            }
+            grid.push(cells);
+        }
+        grid.forEach(row => line(ctx, row.map(cell => cell.p), 'rgba(56,115,144,.16)', .8));
+        for (let col = 0; col < 13; col++) line(ctx, grid.map(row => row[col].p), 'rgba(56,115,144,.16)', .8);
+        grid.flat().forEach(({ x, z, p }) => {
+            ctx.beginPath(); ctx.arc(p[0], p[1], 1.9 * p[2], 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(74,130,151,.36)'; ctx.fill();
+            const angle = Math.atan2(z, x) + time * .32 + .28 * Math.sin(time * .55 + x * .7 - z * .5);
+            const end = project(rotate([x + Math.cos(angle) * .145, 0, z + Math.sin(angle) * .145], spinYaw, spinPitch), spinCx, spinCy, spinScale);
+            const dx = end[0] - p[0], dy = end[1] - p[1];
+            const length = Math.hypot(dx, dy) || 1;
+            const ux = dx / length, uy = dy / length;
+            const head = 5.5 * p[2];
+            const opacity = Math.min(.94, .62 + p[2] * .18);
+            const color = `rgba(25,119,153,${opacity})`;
+            line(ctx, [[p[0] - dx * .72, p[1] - dy * .72], end], color, 1.8 * p[2]);
+            ctx.beginPath(); ctx.moveTo(end[0], end[1]);
+            ctx.lineTo(end[0] - ux * head - uy * head * .55, end[1] - uy * head + ux * head * .55);
+            ctx.lineTo(end[0] - ux * head + uy * head * .55, end[1] - uy * head - ux * head * .55);
+            ctx.closePath(); ctx.fillStyle = color; ctx.fill();
+        });
+
+        const crystalCx = w * .70 + pointer.x * 14;
+        const crystalCy = h * .40 + pointer.y * 12;
+        const crystalScale = Math.min(w * .165, h * .19);
+        const yaw = .6 + time * .09 + pointer.x * .07;
+        const pitch = -.3 + .07 * Math.sin(time * .09) + pointer.y * .045;
+        const centers = heroCells.map(cell => project(rotate(cell, yaw, pitch), crystalCx, crystalCy, crystalScale));
+        heroCells.forEach((cell, a) => {
+            for (let b = a + 1; b < heroCells.length; b++) {
+                const distance = cell.reduce((sum, value, axis) => sum + Math.abs(value - heroCells[b][axis]), 0);
+                if (distance <= 1.31) line(ctx, [centers[a], centers[b]], 'rgba(42,109,156,.32)', .85);
+            }
+        });
+        const orderedCells = heroCells.map((cell, index) => ({ cell, index, depth: rotate(cell, yaw, pitch)[2] })).sort((a, b) => b.depth - a.depth);
+        orderedCells.forEach(({ cell, index }) => {
+            const rotated = octahedron.map(vertex => rotate(vertex.map((value, axis) => value + cell[axis]), yaw, pitch));
+            const points = rotated.map(vertex => project(vertex, crystalCx, crystalCy, crystalScale));
+            const faces = octahedronFaces.slice().sort((a, b) => b.reduce((sum, i) => sum + rotated[i][2], 0) - a.reduce((sum, i) => sum + rotated[i][2], 0));
+            faces.forEach((face, faceIndex) => {
+                ctx.beginPath(); face.forEach((i, j) => j ? ctx.lineTo(points[i][0], points[i][1]) : ctx.moveTo(points[i][0], points[i][1]));
+                ctx.closePath(); ctx.fillStyle = `rgba(60,143,191,${.045 + (faceIndex % 3) * .023})`; ctx.fill();
+            });
+            for (let a = 0; a < 6; a++) for (let b = a + 1; b < 6; b++) {
+                if (Math.floor(a / 2) !== Math.floor(b / 2)) line(ctx, [points[a], points[b]], 'rgba(39,107,158,.48)', 1);
+            }
+            points.forEach(p => {
+                const radius = 2.5 * p[2];
+                const halo = ctx.createRadialGradient(p[0], p[1], 0, p[0], p[1], radius * 3.6);
+                halo.addColorStop(0, 'rgba(65,170,207,.35)'); halo.addColorStop(1, 'rgba(65,170,207,0)');
+                ctx.fillStyle = halo; ctx.fillRect(p[0] - radius * 3.6, p[1] - radius * 3.6, radius * 7.2, radius * 7.2);
+                ctx.beginPath(); ctx.arc(p[0], p[1], radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#d6eef2'; ctx.fill(); ctx.strokeStyle = 'rgba(41,116,156,.75)'; ctx.lineWidth = .9; ctx.stroke();
+            });
+            const center = centers[index];
+            ctx.beginPath(); ctx.arc(center[0], center[1], 2 * center[2], 0, Math.PI * 2);
+            ctx.fillStyle = '#378fa8'; ctx.fill();
+        });
+    }
+
     function render(scene) {
         const { ctx, width: w, height: h, canvas } = scene;
         if (!ctx || !w || !h) return;
@@ -119,7 +214,7 @@
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, w, h);
         const hero = canvas.dataset.scene === 'hero';
-        if (hero) { ribbon(ctx, w, h, sceneTime); spinField(ctx, w, h, sceneTime, true); crystal(ctx, w, h, sceneTime, true); }
+        if (hero) heroArtwork(ctx, w, h, sceneTime);
         else if (canvas.dataset.scene === 'spin') spinField(ctx, w, h, sceneTime, false);
         else crystal(ctx, w, h, sceneTime, false);
         canvas.dataset.renderFrame = String(++scene.frame);

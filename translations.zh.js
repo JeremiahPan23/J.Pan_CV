@@ -196,7 +196,7 @@ window.PORTFOLIO_ZH = {
         'Shaw Overcoming Adversity Award': '逸夫励志奖',
         'CUHK-SZ Shaw College': '香港中文大学（深圳）逸夫书院',
         'Recognized for resilience and perseverance in overcoming personal and academic challenges.': '表彰在应对个人和学业挑战时展现的韧性与毅力。',
-        '© 2026 Jiaxin (Jeremiah) Pan · Built with HTML, CSS & JavaScript': '© 2026 潘佳鑫 · 使用 HTML、CSS 与 JavaScript 构建'
+        '© 2026 Jiaxin (Jeremiah) Pan': '© 2026 潘佳鑫'
     },
     attributes: {
         'Portfolio sections': '个人网站栏目',

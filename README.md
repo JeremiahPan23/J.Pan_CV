@@ -34,6 +34,8 @@ English text in `index.html` serves as the translation key. When editing it, upd
 
 The graphics are conceptual artwork, not research outputs or physical simulations. Motion can be paused and respects the system's reduced-motion preference. Rendering stops when the page is hidden or all canvases are outside the viewport. Parallax is restricted to a fine pointer over the hero illustration.
 
+The hero uses a larger blue-and-teal spin lattice and rotating octahedral network. The two selected-research cards retain their original renderers. The About Me email is displayed with `[at]` and `[dot]` separators and has no `mailto:` link; this reduces direct harvesting of a literal address but does not prevent a determined crawler from reconstructing it.
+
 ## Content and publishing
 
 Keep confirmed roles separate from project-wide work, and retain provisional titles, ongoing status and scientific limitations. The HSSRLM reliability work is described at project level pending confirmation of individual contributions. No research repository links should be added without verification that the URL is appropriate for public sharing.
