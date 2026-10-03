@@ -55,7 +55,7 @@
         const cy = h * (hero ? .77 : .49) + pointer.y * 4;
         const scale = Math.min(w, h) * (hero ? .135 : .245);
         const n = hero ? 10 : 14;
-        const yaw = -.14 + Math.sin(time * .035) * .055;
+        const yaw = -.14;
         const pitch = hero ? .9 : .65;
         const grid = [];
         for (let row = 0; row < n; row++) {
@@ -63,17 +63,18 @@
             for (let col = 0; col < n; col++) {
                 const x = (col / (n - 1) - .5) * 3.6;
                 const z = (row / (n - 1) - .5) * 3.6;
-                const base = Math.atan2(z - .25 * Math.sin(time * .06), x - .24 * Math.cos(time * .06));
-                const angle = base + .65 * Math.sin(time * .22 + x * .8 - z * .5);
+                const base = Math.atan2(z, x);
+                // Each spin turns in its lattice plane, with a gentle local phase variation.
+                const angle = base + time * .38 + .35 * Math.sin(time * .65 + x * .8 - z * .5);
                 const p = project(rotate([x, 0, z], yaw, pitch), cx, cy, scale);
-                const len = hero ? .10 : .09;
-                const end = project(rotate([x + Math.cos(angle) * len, -.02, z + Math.sin(angle) * len], yaw, pitch), cx, cy, scale);
+                const len = hero ? .13 : .10;
+                const end = project(rotate([x + Math.cos(angle) * len, 0, z + Math.sin(angle) * len], yaw, pitch), cx, cy, scale);
                 const dx = end[0] - p[0], dy = end[1] - p[1];
                 const norm = Math.hypot(dx, dy) || 1;
                 const ux = dx / norm, uy = dy / norm;
                 const start = [p[0] - dx, p[1] - dy];
-                line(ctx, [start, end], hero ? 'rgba(67,111,103,.58)' : 'rgba(46,86,79,.74)', hero ? .8 : 1);
-                const head = hero ? 2.3 : 3;
+                line(ctx, [start, end], hero ? 'rgba(67,111,103,.70)' : 'rgba(46,86,79,.74)', hero ? .8 : 1);
+                const head = hero ? 2.8 : 3;
                 line(ctx, [[end[0] - ux * head - uy * head * .5, end[1] - uy * head + ux * head * .5], end, [end[0] - ux * head + uy * head * .5, end[1] - uy * head - ux * head * .5]], 'rgba(50,89,79,.6)', .7);
                 cells.push(p);
             }

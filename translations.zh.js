@@ -3,6 +3,9 @@
  */
 window.PORTFOLIO_ZH = {
     copy: {
+        'Also served as a Student Help Room preceptor, 23 October–12 December 2025.': '另于 2025 年 10 月 23 日至 12 月 12 日担任 Student Help Room（学生答疑室）辅导员。',
+        'View Help Room Certificate →': '查看学生答疑室服务证书 →',
+        'View Award Certificate →': '查看获奖证书 →',
         'Professional Certification': '专业认证',
         'Skills & honours →': '技能与荣誉 →',
         'HCIA-AI': 'HCIA-AI',
