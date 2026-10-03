@@ -1,58 +1,44 @@
-# Jeremiah's CV Webpage
+# Jiaxin Pan — Physics & AI for Science
 
-A professional and modern CV webpage built with HTML, CSS, and JavaScript.
+A bilingual research portfolio built with static HTML, CSS and JavaScript. No build step is required.
 
-## Features
+## Files
 
-- **Professional Design**: Clean and modern layout suitable for a CV
-- **Responsive**: Adapts to different screen sizes (desktop, tablet, mobile)
-- **Interactive**: Includes smooth scrolling and a back-to-top button
-- **Easy to Customize**: Simple HTML structure that's easy to edit
+- `index.html`: shared semantic layout, English content and verified links.
+- `translations.zh.js`: Chinese copy, accessible labels and metadata.
+- `styles.css`: light editorial design and responsive layouts.
+- `script.js`: language selection, section navigation and project deep links.
+- `visuals.js`: Canvas2D spin fields, crystal geometry and subtle pointer parallax.
+- `images/`: existing portraits, logos and icons.
 
-## Files Included
+## Preview and checks
 
-- `index.html` - Main HTML structure of the CV
-- `styles.css` - CSS styling for the CV
-- `script.js` - JavaScript for interactivity
-- `README.md` - This file with instructions
+Serve the project directory with a local static server, for example:
 
-## How to Customize
+```sh
+python -m http.server 8765 --bind 127.0.0.1
+```
 
-### Updating Personal Information
+Open `http://127.0.0.1:8765/`. Check desktop and mobile layouts, both languages, navigation and expandable project details.
 
-1. Open `index.html` in a text editor
-2. Update the following sections:
-   - Name and title in the header
-   - Contact information (email, phone, location, LinkedIn, GitHub)
-   - Professional summary
-   - Education details
-   - Work experience
-   - Skills
-   - Projects
+```sh
+node --check script.js
+node --check translations.zh.js
+node --check visuals.js
+git diff --check
+```
 
-### Changing Colors and Styling
+First-time visitors see English. The EN / 中文 control remembers a manual choice in local storage when available. Both languages share the same panels and project links; changing language preserves expanded details. The document language, title, descriptions and accessible labels update with the selection.
 
-1. Open `styles.css` in a text editor
-2. Modify the CSS variables and styles to match your preferences
-3. You can change colors, fonts, spacing, and layout
+English text in `index.html` serves as the translation key. When editing it, update the corresponding key and Chinese copy in `translations.zh.js`. The page reports missing translations in the console and exposes their count as `document.documentElement.dataset.translationMissing` (expected: `0`). Names and technology identifiers may remain in English intentionally.
 
-## How to View
+The graphics are conceptual artwork, not research outputs or physical simulations. Motion can be paused and respects the system's reduced-motion preference. Rendering stops when the page is hidden or all canvases are outside the viewport. Parallax is restricted to a fine pointer over the hero illustration.
 
-Simply double-click the `index.html` file to open it in your default web browser.
+## Content and publishing
 
-## Deployment
+Keep confirmed roles separate from project-wide work, and retain provisional titles, ongoing status and scientific limitations. The HSSRLM reliability work is described at project level pending confirmation of individual contributions. No research repository links should be added without verification that the URL is appropriate for public sharing.
 
-You can deploy this CV webpage to any static hosting service like:
-- GitHub Pages
-- Netlify
-- Vercel
-- AWS S3
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
+Push and publish changes only when the user authorizes them. Certificate PDFs are linked from the corresponding certification, award or conference entry. Award years and conference details should follow the supplied certificates; mark certificates that have not yet been issued without adding placeholder links.
 
 ## License
 

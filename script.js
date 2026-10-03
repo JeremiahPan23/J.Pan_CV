@@ -1,181 +1,105 @@
-/**
- * Tabbed Portfolio — Interactive single-page navigation
- * with smooth fade-in transitions and hash-based deep linking.
- */
+/** Shared layout, bilingual copy and accessible section navigation. */
 (function () {
     'use strict';
-
-    const VALID_TABS = ['overview', 'education', 'research', 'work', 'skills'];
+    const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+    const panels = Array.from(document.querySelectorAll('.tab-panel'));
+    const zh = window.PORTFOLIO_ZH || { copy: {}, attributes: {} };
+    const canonical = value => value.replace(/\s+/g, ' ').replace(/\s+([,.:;)])/g, '$1').replace(/\(\s+/g, '(').trim();
+    const decoder = document.createElement('textarea');
+    const keyFor = element => {
+        decoder.innerHTML = element.innerHTML.replace(/<[^>]*>/g, ' ');
+        return canonical(decoder.value);
+    };
+    const translations = new Map(Object.entries(zh.copy).map(([key, value]) => [canonical(key), value]));
+    const nodes = Array.from(document.querySelectorAll('h1,h2,h3,h4,p,li,summary,.badge,.pill,.edu-years,.tab-label,.visual-label,.text-link,.button-primary,.skip-link,.cert-link a')).map(element => ({ element, english: element.innerHTML, key: keyFor(element) }));
+    const attributes = Array.from(document.querySelectorAll('[aria-label],[alt]')).flatMap(element => ['aria-label', 'alt'].filter(name => element.hasAttribute(name)).map(name => ({ element, name, english: element.getAttribute(name) })));
+    const brand = document.querySelector('.site-brand');
+    const englishBrand = brand.innerHTML;
+    const englishTitle = document.title;
+    const metadata = Array.from(document.querySelectorAll('meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"]')).map(element => ({ element, english: element.content, title: /title/.test(element.getAttribute('name') || element.getAttribute('property')) }));
+    let language = 'en';
     let activeTab = 'overview';
+    const unchanged = new Set(['Python', 'PyTorch', 'Slurm', 'Hugging Face Transformers']);
+    const missing = nodes.filter(node => /[a-z]/i.test(node.key) && !translations.has(node.key) && !unchanged.has(node.key));
+    document.documentElement.dataset.translationMissing = String(missing.length);
+    if (missing.length) console.warn('Chinese copy missing:', JSON.stringify(missing.map(node => node.key)));
 
-    /**
-     * Switch to a tab by id. Handles the visual state, animation, and URL hash.
-     * @param {string} tabId - One of VALID_TABS
-     * @param {boolean} updateHash - Whether to sync the URL hash
-     */
-    function switchTab(tabId, updateHash = true) {
-        if (!VALID_TABS.includes(tabId) || tabId === activeTab) return;
+    function setLanguage(next, remember = true) {
+        if (next !== 'en' && next !== 'zh') return;
+        const headerBottom = document.querySelector('.site-header').getBoundingClientRect().bottom;
+        const anchor = window.scrollY > 20 ? nodes.find(node => {
+            const box = node.element.getBoundingClientRect();
+            return box.height > 0 && box.top >= headerBottom && box.top < window.innerHeight;
+        }) : null;
+        const anchorTop = anchor ? anchor.element.getBoundingClientRect().top : 0;
+        language = next;
+        document.documentElement.lang = next === 'zh' ? 'zh-Hans' : 'en';
+        document.documentElement.dataset.language = next;
+        nodes.forEach(({ element, english, key }) => { element.innerHTML = next === 'zh' && translations.has(key) ? translations.get(key) : english; });
+        attributes.forEach(({ element, name, english }) => { element.setAttribute(name, next === 'zh' ? (zh.attributes[english] || english) : english); });
+        brand.innerHTML = next === 'zh' ? '潘佳鑫<span class="brand-dot" aria-hidden="true">.</span>' : englishBrand;
+        document.title = next === 'zh' ? zh.title : englishTitle;
+        metadata.forEach(({ element, english, title }) => { element.content = next === 'zh' ? (title ? zh.title : zh.description) : english; });
+        document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === next)));
+        if (remember) { try { localStorage.setItem('portfolio-language', next); } catch (_) { /* Site still works if storage is disabled. */ } }
+        document.dispatchEvent(new CustomEvent('portfolio:language', { detail: { language: next } }));
+        if (anchor) requestAnimationFrame(() => window.scrollBy({ top: anchor.element.getBoundingClientRect().top - anchorTop, behavior: 'instant' }));
+    }
 
-        // Update buttons
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            const isActive = btn.dataset.tab === tabId;
-            btn.classList.toggle('active', isActive);
-            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    function showTab(id, { project = '', scroll = true, updateHash = true, focus = false } = {}) {
+        if (!panels.some(panel => panel.id === id)) return;
+        activeTab = id;
+        panels.forEach(panel => { panel.hidden = panel.id !== id; panel.classList.toggle('active', panel.id === id); });
+        tabs.forEach(button => {
+            const selected = button.dataset.tab === id;
+            button.classList.toggle('active', selected);
+            button.setAttribute('aria-selected', String(selected));
+            button.tabIndex = selected ? 0 : -1;
         });
-
-        // Update panels — with fade-out, then fade-in
-        const oldPanel = document.getElementById(activeTab);
-        const newPanel = document.getElementById(tabId);
-
-        if (oldPanel === newPanel) {
-            setActiveTabPanel(newPanel);
-        } else if (oldPanel && newPanel) {
-            // Fade out old
-            oldPanel.style.opacity = '0';
-            oldPanel.style.transform = 'translateY(6px)';
-
-            setTimeout(() => {
-                setActiveTabPanel(newPanel);
-                // Small delay then fade in
-                requestAnimationFrame(() => {
-                    newPanel.style.opacity = '';
-                    newPanel.style.transform = '';
-                });
-            }, 150);
-        }
-
-        activeTab = tabId;
-
-        // Update hash (without jumping, and only if initiated by user click)
+        const panel = document.getElementById(id);
+        const target = project ? document.getElementById(project) : panel;
         if (updateHash) {
-            const newHash = '#' + tabId;
-            if (window.location.hash !== newHash) {
-                history.replaceState(null, '', newHash);
-            }
+            const hash = '#' + (project || id);
+            if (location.hash !== hash) history.pushState(null, '', hash);
         }
-    }
-
-    /**
-     * Set the active tab panel without animation (for initial load and post-transition).
-     */
-    function setActiveTabPanel(panel) {
-        document.querySelectorAll('.tab-panel').forEach(p => {
-            p.classList.remove('active');
-            p.hidden = true;
-            p.style.opacity = '';
-            p.style.transform = '';
-        });
-        panel.classList.add('active');
-        panel.hidden = false;
-    }
-
-    /**
-     * Determine the initial tab from the URL hash.
-     */
-    function getInitialTab() {
-        const hash = window.location.hash.replace('#', '');
-        if (hash && VALID_TABS.includes(hash)) {
-            return hash;
+        if (focus && target) { target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); }
+        if (scroll) {
+            const behavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+            if (id === 'overview' && !project) window.scrollTo({ top: 0, behavior });
+            else if (target) target.scrollIntoView({ behavior, block: 'start' });
         }
-        return 'overview';
+        document.dispatchEvent(new CustomEvent('portfolio:panel-change'));
     }
 
-    /**
-     * Initialize: set up click handlers, hash sync, and initial state.
-     */
-    function init() {
-        const initialTab = getInitialTab();
-
-        // Wire up tab button clicks
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tabId = btn.dataset.tab;
-                switchTab(tabId, true);
-            });
-        });
-
-        // Anti-spam: reconstruct email from split data attributes (defeats simple mailto scrapers)
-        document.querySelectorAll('.email-link').forEach(link => {
-            const user = link.dataset.user;
-            const domain = link.dataset.domain;
-            if (user && domain) {
-                const email = user + '@' + domain;
-                link.href = 'mailto:' + email;
-                const textEl = link.querySelector('.email-text');
-                if (textEl) textEl.textContent = email;
-            }
-        });
-
-        // "Read More" links switch to the target tab (e.g. from Overview to Research)
-        document.querySelectorAll('.read-more-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const tabId = link.dataset.tab;
-                if (tabId && VALID_TABS.includes(tabId)) {
-                    e.preventDefault();
-                    switchTab(tabId, true);
-                    // Scroll to top of the tab area so the new content is visible
-                    requestAnimationFrame(() => {
-                        document.querySelector('.tab-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    });
-                }
-            });
-        });
-
-        // Hash change — allows browser back/forward to work
-        window.addEventListener('hashchange', () => {
-            const target = getInitialTab();
-            switchTab(target, false);
-        });
-
-        // Keyboard: left/right arrows navigate tabs when nav is focused
-        document.querySelector('.tab-nav').addEventListener('keydown', (e) => {
-            const currentIdx = VALID_TABS.indexOf(activeTab);
-            let nextIdx = -1;
-
-            if (e.key === 'ArrowRight') nextIdx = (currentIdx + 1) % VALID_TABS.length;
-            else if (e.key === 'ArrowLeft') nextIdx = (currentIdx - 1 + VALID_TABS.length) % VALID_TABS.length;
-            else if (e.key === 'Home') nextIdx = 0;
-            else if (e.key === 'End') nextIdx = VALID_TABS.length - 1;
-
-            if (nextIdx !== -1) {
-                e.preventDefault();
-                const nextBtn = document.querySelector(`.tab-btn[data-tab="${VALID_TABS[nextIdx]}"]`);
-                nextBtn.focus();
-                switchTab(VALID_TABS[nextIdx], true);
-            }
-        });
-
-        // Apply initial tab (already set via .active on the HTML — just sync buttons)
-        if (initialTab !== 'overview') {
-            // Deactivate the default and activate the hash-based one
-            const defaultPanel = document.getElementById('overview');
-            defaultPanel.classList.remove('active');
-            defaultPanel.hidden = true;
-
-            const targetPanel = document.getElementById(initialTab);
-            targetPanel.classList.add('active');
-            targetPanel.hidden = false;
-
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                const isActive = btn.dataset.tab === initialTab;
-                btn.classList.toggle('active', isActive);
-                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-            });
-            activeTab = initialTab;
-        }
-
-        // Smooth-scroll to tab-nav if user lands on a hash (prevents being scrolled past on load)
-        if (initialTab !== 'overview') {
-            requestAnimationFrame(() => {
-                document.querySelector('.tab-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        }
+    function readHash(scroll) {
+        const hash = location.hash.slice(1);
+        if (hash === 'main') showTab(activeTab, { scroll, updateHash: false, focus: true });
+        else if (['xy-project', 'hssrlm-project', 'urc2026'].includes(hash)) showTab('research', { project: hash, scroll, updateHash: false });
+        else if (hash === 'about') showTab('overview', { project: 'about', scroll, updateHash: false });
+        else showTab(panels.some(panel => panel.id === hash) ? hash : 'overview', { scroll, updateHash: false });
     }
-
-    // Start when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
+    tabs.forEach(button => button.addEventListener('click', () => showTab(button.dataset.tab)));
+    document.querySelectorAll('.read-more-link').forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        showTab(link.dataset.tab, { project: link.dataset.project || '', focus: true });
+    }));
+    document.querySelector('.tab-nav').addEventListener('keydown', event => {
+        let index = tabs.findIndex(button => button.dataset.tab === activeTab);
+        if (event.key === 'ArrowRight') index = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') index = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') index = 0;
+        else if (event.key === 'End') index = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        tabs[index].focus();
+        showTab(tabs[index].dataset.tab);
+    });
+    document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+    window.addEventListener('popstate', () => readHash(true));
+    window.addEventListener('hashchange', () => readHash(true));
+    let saved = 'en';
+    try { saved = localStorage.getItem('portfolio-language') || 'en'; } catch (_) { /* English remains the default. */ }
+    setLanguage(saved === 'zh' ? 'zh' : 'en', false);
+    readHash(false);
+    if (location.hash) requestAnimationFrame(() => readHash(true));
 })();
