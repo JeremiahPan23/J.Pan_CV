@@ -21,6 +21,9 @@ Thumbs.db
 
 # Local rendering artifacts; keep final CV sources and PDFs tracked.
 tmp/
+output/
+# Unredacted research paper: keep local; publish only papers/URC2026_Paper_Public.pdf.
+/ENG2001_Research_Paper_Final_Ver.pdf
 __pycache__/
 *.aux
 *.out

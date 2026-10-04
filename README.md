@@ -42,6 +42,10 @@ Keep confirmed roles separate from project-wide work, and retain provisional tit
 
 Push and publish changes only when the user authorizes them. Certificate PDFs are linked from the corresponding certification, award or conference entry. Award years and conference details should follow the supplied certificates; mark certificates that have not yet been issued without adding placeholder links.
 
+The URC2026 entry links to `papers/URC2026_Paper_Public.pdf`, the privacy-reviewed copy of the presented research paper. The student-number line, WeChat contact-card image and six Microsoft Forms editor URLs have been permanently removed. The unredacted original and local output folder are ignored by Git. Publish only the reviewed copy when updating this paper.
+
+The four conference photographs use responsive lossless WebP previews in `images/previews/` at 640px and 1200px widths. The links retain the original full-resolution JPEGs. Resizing reduces detail beyond the preview resolution, while lossless encoding avoids additional compression artifacts; visitors can open the unchanged originals for full detail.
+
 ## Traditional CVs
 
 `cv/research-cv.tex` is the research-application version; `cv/comprehensive-cv.tex` is the complete version. Both are standalone moderncv documents with no external image or input-file dependencies. The About Me section links to their PDF counterparts. See `cv/README.md` for regeneration, compilation limitations and the content-sync checklist.

@@ -23,6 +23,7 @@ window.PORTFOLIO_ZH = {
         'The Chinese University of Hong Kong, Shenzhen · Second Undergraduate Research Conference': '香港中文大学（深圳） · 第二届本科生科研会议',
         'Presented “Self-Confidence in Math and STEM Major Choice at CUHK-Shenzhen” at my first research conference.': '在首次参加的科研会议上报告研究“Self-Confidence in Math and STEM Major Choice at CUHK-Shenzhen”（数学自信与 STEM 专业选择；STEM 指科学、技术、工程和数学）。',
         'View Presentation Certificate →': '查看报告证书 →',
+        'Read Research Paper · Public Copy →': '阅读研究论文 · 公开版 →',
         'Philip Yu Hong Wong Anita Fung Yee Leung Full-tuition Scholarship.': '黄宜弘梁凤仪伉俪全免学费入学奖学金。',
         'View Scholarship Certificate →': '查看奖学金证书 →',
         "View Dean's List Certificate →": '查看院长荣誉录证书 →',
