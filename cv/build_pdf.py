@@ -89,6 +89,13 @@ def inline(text):
                 i += 2
         elif command == 'times':
             output.append('×')
+        elif command == 'href':
+            target, i = group(text, i)
+            label, i = group(text, i)
+            target = re.sub(r'\\([&_%#])', r'\1', target)
+            if not target.startswith('https://'):
+                raise ValueError(f'Unsupported link target: {target}')
+            output.append(f'<link href="{escape(target, quote=True)}"><u>{inline(label)}</u></link>')
         else:
             raise ValueError(f'Unsupported inline command: {command}')
     return re.sub(r'\s+', ' ', ''.join(output)).strip()
@@ -153,12 +160,12 @@ def render(source):
     homepage = metadata('homepage')
     profiles = dict(re.findall(r'\\social\[([^\]]+)\]\{([^}]+)\}', text))
     blocks = parse(text)
-    size = 10.3 if research else 10.5
+    size = 10.3 if research else 10.2
     body_style = ParagraphStyle('body', fontName='CVSans', fontSize=size,
-                                leading=size * 1.25 if research else 12.2, textColor=colors.HexColor('#262626'),
-                                spaceAfter=3, allowWidows=0, allowOrphans=0)
+                                leading=size * 1.25 if research else 11.8, textColor=colors.HexColor('#262626'),
+                                spaceAfter=3 if research else 2, allowWidows=0, allowOrphans=0)
     heading_style = ParagraphStyle('heading', parent=body_style, fontName='CVSans-Bold',
-                                  fontSize=13, leading=16, spaceBefore=11 if research else 9, spaceAfter=6,
+                                  fontSize=13, leading=16, spaceBefore=11 if research else 7, spaceAfter=6,
                                   keepWithNext=True)
     date_style = ParagraphStyle('date', parent=body_style, fontSize=9, leading=11.6,
                                textColor=colors.HexColor('#666666'), alignment=TA_RIGHT)
@@ -204,7 +211,7 @@ def render(source):
             ('LEFTPADDING', (0, 0), (0, 0), 0), ('RIGHTPADDING', (0, 0), (0, 0), 9),
             ('LEFTPADDING', (1, 0), (1, 0), 4), ('RIGHTPADDING', (1, 0), (1, 0), 0),
             ('TOPPADDING', (0, 0), (-1, -1), 0),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), (6 if research else 5) if index == len(rows) - 1 else 0),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), (6 if research else 4) if index == len(rows) - 1 else 0),
             ]))
             result.append(t)
         return result

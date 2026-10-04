@@ -10,7 +10,9 @@ Both sources are standalone moderncv documents, preserving the original casual, 
 
 On 2026-10-03, the built-in LaTeX compiler failed before reading either source with `Unable to find standard directories for platform`. This is an environment failure, not a successful LaTeX compile or a verified source diagnostic. No terminal TeX distribution was installed.
 
-To provide usable PDF documents, `build_pdf.py` reads the body and header directly from each `.tex` and renders a traditional two-column CV with ReportLab. It is a limited renderer, **not a LaTeX compiler**. Supported commands include `section`, `cventry`, `cvitem`, `newpage`, `itemize` and the inline formatting used here; unsupported commands cause an error. It uses Arial from Windows, and requires `reportlab` and `pypdf`.
+The same environment failure was reproduced for both edited sources on 2026-10-04. Downloadable PDFs for this revision use the existing source-driven renderer; native moderncv compilation remains unverified.
+
+To provide usable PDF documents, `build_pdf.py` reads the body and header directly from each `.tex` and renders a traditional two-column CV with ReportLab. It is a limited renderer, **not a LaTeX compiler**. Supported commands include `section`, `cventry`, `cvitem`, `newpage`, `itemize`, `href` and the inline formatting used here; unsupported commands cause an error. It uses Arial from Windows, and requires `reportlab` and `pypdf`.
 
 ```powershell
 python cv/build_pdf.py
@@ -30,10 +32,12 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 - Latest user confirmation: cumulative GPA is **3.61/4.0** (2026-10-03).
 - Degree: **B.Sc. in Physics (with honours) — Expected**, **2023–2027**. The earlier Economics enrolment is background, not a B.B.A. award. First Class Honours is not asserted.
 - HSSRLM preprocessing, candidate verification and the three-structure audit are confirmed personal contributions. The 26-record registry remains project-level work.
+- User update (2026-10-04): HSSRLM is a working paper. An initial AAAI submission plan was deferred while another manuscript took priority; IJCAI/ACL are possible future venues. A collaborator has indicated that current contributions could support co-first authorship. Final author order and submission plans remain unconfirmed; do not list this as a submitted/accepted publication or confirmed co-first author credit.
 - XY project title is provisional; no invented starting year or quantified advantage over Wolff. Experimental scope remains a 4×4 lattice at one temperature.
 - Full-tuition scholarship uses the current website/certificate record's **2023–2026** span rather than extending the old CV claim to 2027.
 - Dean's List includes AY2025–2026, with the 2026 certificate pending issuance.
 - Help Room service is a form of USTF, covering CSC1005, CSC1001 and PHY1001, 23 October–12 December 2025.
 - URC2026 is a conference presentation, not a publication or an assertion of sole authorship.
+- Both CVs use the broader `Conference` section heading and contain a clickable HTTPS link to the privacy-reviewed public paper.
 - Earlier diffusion-model work from the supplied full CV is retained as research training, without inventing a separate current project's dates.
 - The public CV copy removes unsupported machine-level precision, publication, award and independent-invention claims; no planned exchange programme or unverified research repository is added.

@@ -40,6 +40,8 @@ The enlarged hero shows only a 23×23 conceptual XY spin lattice with a moving v
 
 Keep confirmed roles separate from project-wide work, and retain provisional titles, ongoing status and scientific limitations. HSSRLM preprocessing, candidate verification and the three-structure audit are confirmed individual contributions. The metal-node registry remains project-level work; individual ownership is not asserted. No research repository links should be added without verification that the URL is appropriate for public sharing.
 
+HSSRLM is a working paper. User-confirmed submission history and plans are shown separately from completed work: the initial AAAI plan was deferred, IJCAI/ACL are possible future venues, and collaborator feedback supports potential co-first authorship for current contributions. Final author order and submission plans remain undecided; no submitted/accepted publication or confirmed co-first credit is asserted.
+
 Push and publish changes only when the user authorizes them. Certificate PDFs are linked from the corresponding certification, award or conference entry. Award years and conference details should follow the supplied certificates; mark certificates that have not yet been issued without adding placeholder links.
 
 The URC2026 entry links to `papers/URC2026_Paper_Public.pdf`, the privacy-reviewed copy of the presented research paper. The student-number line, WeChat contact-card image and six Microsoft Forms editor URLs have been permanently removed. The unredacted original and local output folder are ignored by Git. Publish only the reviewed copy when updating this paper.

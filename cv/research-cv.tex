@@ -1,4 +1,4 @@
-% Research application CV. Standalone source; content reviewed 2026-10-03.
+% Research application CV. Standalone source; content reviewed 2026-10-04.
 % Compile in the Codex LaTeX editor or Overleaf. Two pages by design.
 \documentclass[11pt,a4paper,sans]{moderncv}
 \moderncvstyle{casual}
@@ -27,16 +27,16 @@
 \section{Current Research}
 \cventry{Ongoing}{Data-Free Generative Sampling of the Two-Dimensional XY Model}{Undergraduate Researcher, CUHK-Shenzhen}{}{}{Supervised by Prof. Kai Zhou. Provisional portfolio title.
 \begin{itemize}
-\item Contributed to adapting Stochastic Path Sampling (SPS) to periodic XY angles, using energy and forward/backward path probabilities without pre-generated equilibrium training configurations; evaluated paths with path-space independence Metropolis--Hastings (MH) correction.
-\item Completed a reproducible training-budget experiment across three seeds and three generation-step settings in Python/PyTorch on Slurm-managed GPUs; Wolff sampling provided an independent validation reference.
-\item Evaluated physical statistics, effective sample size per sampling second, and rejection streaks. Early efficiency gains were consistent; later changes were seed dependent. The limited $4\times4$, single-temperature study does not establish thermodynamic critical behavior or an advantage over Wolff.
+\item Contributed to adapting Stochastic Path Sampling (SPS) to periodic XY angles using energy and forward/backward path probabilities without equilibrium training data; evaluated paths with path-space independence Metropolis--Hastings (MH) correction.
+\item Completed reproducible Python/PyTorch training-budget experiments across three seeds and three generation-step settings on Slurm-managed GPUs; used Wolff sampling as an independent validation reference.
+\item Evaluated physical statistics, effective sample size per sampling second, and rejection streaks; found consistent early gains and seed-dependent later changes. Scope: $4\times4$, one temperature; no established thermodynamic critical behavior or advantage over Wolff.
 \end{itemize}}
-\cventry{Ongoing}{Interpretable Crystal Representations for AI-Assisted Materials Design}{HSSRLM --- AI for Science}{}{}{Project framework: hierarchical descriptors linking natural language and porous materials, with T5 (Text-to-Text Transfer Transformer) bidirectional translation infrastructure. Broader dataset validation and model evaluation remain in progress.
+\cventry{Ongoing}{Interpretable Crystal Representations for AI-Assisted Materials Design}{HSSRLM --- AI for Science --- Working paper}{}{}{Hierarchical crystal descriptors with T5 (Text-to-Text Transfer Transformer) bidirectional text/descriptor infrastructure; broader data validation and model evaluation ongoing.
 \begin{itemize}
-\item Contributed to evidence-aware Crystallographic Information File (CIF)-to-descriptor preprocessing, preserving provenance and separating known, inferred, and missing information.
+\item Contributed to evidence-aware CIF (Crystallographic Information File)-to-descriptor preprocessing preserving provenance and known/inferred/missing information.
 \item Contributed to candidate validation, node/linker/topology connectivity checks, explicit failure reporting, and descriptor-level duplicate tracking.
 \item Contributed to limited structure-equivalence audits on three publicly sourced metal--organic frameworks, examining information lost by coarse descriptors.
-\end{itemize}Outputs are descriptors, not complete atomistic CIF structures; rule compatibility does not establish physical validity.}
+\end{itemize}Descriptors omit full atomistic structures; rule checks do not prove physical validity. Initial AAAI plan deferred for another manuscript; IJCAI/ACL considered. A collaborator assessed current contributions as supporting potential co-first authorship; final author order undecided.}
 
 \newpage
 \section{Additional Research Experience}
@@ -44,8 +44,8 @@
 \cventry{2025 (Fall)}{Guided Research on Van der Waals Integration and 2D Electronics}{CUHK-Shenzhen, Prof. Qi Qian's Lab}{}{}{Hands-on fabrication and characterization of $\mathrm{MoS}_2$ devices using dry transfer and van der Waals integration; studied metal--semiconductor contacts and polarity modulation. Conducted literature review and prepared an end-of-term report.}
 \cventry{2025 (Spring)}{Computational Physics Course Project}{CUHK-Shenzhen}{}{}{Group study of the quantum harmonic oscillator using finite-difference discretization and matrix eigenvalue methods; compared numerical and analytical results, examined convergence, and synthesized the final report in \LaTeX.}
 
-\section{Conference Presentation}
-\cventry{31 Jan 2026}{CUHK-Shenzhen Undergraduate Research Conference (URC2026)}{Second Undergraduate Research Conference}{}{}{Presented ``Self-Confidence in Math and STEM Major Choice at CUHK-Shenzhen'' at my first research conference. Presentation certificate available on the portfolio.}
+\section{Conference}
+\cventry{31 Jan 2026}{CUHK-Shenzhen Undergraduate Research Conference (URC2026)}{Second Undergraduate Research Conference}{}{}{Presented ``Self-Confidence in Math and STEM Major Choice at CUHK-Shenzhen'' at my first research conference. \href{https://jeremiahpan23.github.io/J.Pan_CV/papers/URC2026_Paper_Public.pdf}{Research paper (public copy)}; presentation certificate on the portfolio.}
 
 \section{Teaching}
 \cventry{Oct--Dec 2025}{Undergraduate Student Teaching Fellow (USTF)}{CUHK-Shenzhen School of Science and Engineering}{}{}{Provided tutoring through the Student Help Room, a form of USTF service, for CSC1005 (Introduction to Computer Engineering), CSC1001 (Introduction to Computer Science), and PHY1001 (Mechanics), 23 October--12 December 2025.}
