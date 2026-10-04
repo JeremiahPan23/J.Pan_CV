@@ -1,0 +1,41 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=18mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,tabularx,xcolor,hyperref}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\definecolor{accent}{HTML}{516A60}
+\hypersetup{colorlinks=true,urlcolor=accent,pdftitle={AUSC Performance Record - Jiaxin (Jeremiah) Pan},pdfauthor={Jiaxin (Jeremiah) Pan}}
+\setlength{\parindent}{0pt}
+\newcounter{concert}
+\newcommand{\event}[3]{%
+  \ifnum\value{concert}>0\clearpage\fi\stepcounter{concert}%
+  {\small\color{accent} MUSIC / PERFORMANCE RECORD}\par\medskip
+  {\LARGE\bfseries Auckland University Student Choir}\par\smallskip
+  Jiaxin (Jeremiah) Pan · Tenor · Spring 2026\par\medskip
+  {\color{accent}\hrule}\bigskip
+  {\Large\bfseries #2}\par\smallskip{\color{accent}#1}\par\medskip
+  #3\par\bigskip
+}
+\newcommand{\imagecard}[2]{%
+  \begin{minipage}[t][80mm]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth,height=68mm,keepaspectratio]{#1}\par\smallskip
+  {\small #2}
+  \end{minipage}\hfill
+}
+\begin{document}
+\event{24 April 2026 · Kāhui St David's, Auckland}{ANZAC Eve Commemorative Concert}{Performed with AUSC at The Art of Remembrance, an ANZAC Eve concert. The programme included \textit{Te Aroha} and \textit{Blessing}.}
+\imagecard{assets/AUSC_1_ANZAC_Concert_Poster.jpg}{Concert programme cover}
+\imagecard{assets/AUSC_2_ANZAC_Program_Music.jpg}{Choral programme: Te Aroha and Blessing}
+\par\medskip
+\imagecard{assets/AUSC_3_ANZAC_Stage_Performance.jpg}{Live performance at Kāhui St David's}
+\imagecard{assets/AUSC_4_ANZAC_Onstage_Group.jpg}{On stage with fellow choir members}
+\event{29 May 2026 · Kāhui St David's, Auckland}{Oh, the Places We'll Go}{Performed in AUSC's end-of-semester public concert. The programme roster lists Jeremiah Pan among the tenors.}
+\imagecard{assets/AUSC_5_OhThePlacesWellGo_Poster.jpg}{End-of-semester concert poster}
+\imagecard{assets/AUSC_6_Concert_Program_Member_List.jpg}{Concert programme and choir roster}
+\par\medskip
+\imagecard{assets/AUSC_7_Member_List_Jeremiah_Pan.jpg}{Roster detail: Jeremiah Pan, tenor}
+\imagecard{assets/AUSC_8_Post_Concert_Photo_with_Program.jpg}{After the concert with fellow choir members}
+\par\medskip
+\href{https://www.youtube.com/playlist?list=PLNwVf5Xn4ehU}{Watch the six-video concert playlist}
+\end{document}

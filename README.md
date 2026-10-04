@@ -48,6 +48,29 @@ The URC2026 entry links to `papers/URC2026_Paper_Public.pdf`, the privacy-review
 
 The four conference photographs use responsive lossless WebP previews in `images/previews/` at 640px and 1200px widths. The links retain the original full-resolution JPEGs. Resizing reduces detail beyond the preview resolution, while lossless encoding avoids additional compression artifacts; visitors can open the unchanged originals for full detail.
 
+## Choral music
+
+The Experience panel contains three choir entries, linked directly by `#choir`.
+Use **School of Music Choir, CUHK-SZ** in English and **音乐学院合唱班** in Chinese;
+the university chorus retains its official English name **CUHK-SZ Chorus**.
+The Auckland exchange semester is Spring 2026, confirmed by the user and the supplied
+concert materials. The December 2025 poster spells the concert title **Winter Carols**.
+
+`arts/AUSC_Performance_Record.pdf` is a two-page public performance record with
+award-application headings removed. Its editable Overleaf project is in `arts/ausc/`;
+compile `main.tex` together with `assets/` in Overleaf. When TeX is unavailable,
+`python arts/ausc/build_pdf.py` reads the source's event/image macros and generates
+the PDF through ReportLab. This is a limited renderer, not a LaTeX compiler.
+The original application ZIP remains local and is ignored by Git.
+
+Chorus photographs use responsive lossless WebP previews at 640px and 1200px widths,
+loaded lazily inside an expandable gallery. Posters use 320px lossless previews.
+Each links to its original supplied image. The six-video YouTube playlist was
+verified on the choir's public channel; it opens on request rather than loading
+an embedded player with the main page. The comprehensive CV includes all three
+choir experiences and performance links; the two-page research CV stays focused
+on research.
+
 ## Traditional CVs
 
 `cv/research-cv.tex` is the research-application version; `cv/comprehensive-cv.tex` is the complete version. Both are standalone moderncv documents with no external image or input-file dependencies. The About Me section links to their PDF counterparts. See `cv/README.md` for regeneration, compilation limitations and the content-sync checklist.

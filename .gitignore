@@ -31,3 +31,5 @@ __pycache__/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+# Original award-application archive; the public performance record lives in arts/.
+/AUSC_Performance_Proof_Jeremiah_Pan.zip

@@ -1,0 +1,5 @@
+# Binary artifacts must retain their exact bytes on Windows and in GitHub Pages.
+*.pdf binary
+*.jpg binary
+*.png binary
+*.webp binary

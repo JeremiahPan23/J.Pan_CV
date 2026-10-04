@@ -76,6 +76,7 @@
         if (hash === 'main') showTab(activeTab, { scroll, updateHash: false, focus: true });
         else if (['xy-project', 'hssrlm-project', 'urc2026'].includes(hash)) showTab('research', { project: hash, scroll, updateHash: false });
         else if (hash === 'about') showTab('overview', { project: 'about', scroll, updateHash: false });
+        else if (hash === 'choir') showTab('work', { project: 'choir', scroll, updateHash: false });
         else showTab(panels.some(panel => panel.id === hash) ? hash : 'overview', { scroll, updateHash: false });
     }
     tabs.forEach(button => button.addEventListener('click', () => showTab(button.dataset.tab)));

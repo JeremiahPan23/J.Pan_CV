@@ -12,6 +12,10 @@ On 2026-10-03, the built-in LaTeX compiler failed before reading either source w
 
 The same environment failure was reproduced for both edited sources on 2026-10-04. Downloadable PDFs for this revision use the existing source-driven renderer; native moderncv compilation remains unverified.
 
+The comprehensive source was checked again on 2026-10-05 with the same environment
+failure. Its reviewed PDF now has five pages, with extracurricular activities
+starting on the final page. The research-application PDF remains two pages.
+
 To provide usable PDF documents, `build_pdf.py` reads the body and header directly from each `.tex` and renders a traditional two-column CV with ReportLab. It is a limited renderer, **not a LaTeX compiler**. Supported commands include `section`, `cventry`, `cvitem`, `newpage`, `itemize`, `href` and the inline formatting used here; unsupported commands cause an error. It uses Arial from Windows, and requires `reportlab` and `pypdf`.
 
 ```powershell
@@ -28,6 +32,13 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 4. Retain ongoing status, provisional names, limited study scope, and the distinction between personal contributions and project-wide infrastructure.
 
 ### Source decisions for this revision
+
+- Choir experiences are included in the comprehensive CV: School of Music Choir,
+  CUHK-SZ (Fall 2025), Auckland University Student Choir (Spring 2026, confirmed by
+  the user), and CUHK-SZ Chorus (Fall 2026). Chinese distinguishes the music-school
+  choir class (合唱班) from the university chorus (合唱团). Concert titles and dates
+  follow the supplied posters/programmes; the public AUSC record and verified
+  six-video playlist are linked.
 
 - Latest user confirmation: cumulative GPA is **3.61/4.0** (2026-10-03).
 - Degree: **B.Sc. in Physics (with honours) — Expected**, **2023–2027**. The earlier Economics enrolment is background, not a B.B.A. award. First Class Honours is not asserted.

@@ -101,6 +101,12 @@ main { min-height:65vh; }
 .conference-gallery img { width:100%; height:auto; }
 .conference-gallery figcaption { grid-column:1/-1; }
 .conference-gallery .gallery-caption { font-size:11px; color:var(--color-muted); }
+.choir-section { scroll-margin-top:130px; }
+.choir-intro { max-width:680px; margin-bottom:24px; color:var(--color-muted); }
+.choir-card { padding:24px; margin-bottom:16px; }
+.choir-card--poster { display:grid; grid-template-columns:132px minmax(0,1fr); gap:24px; align-items:start; }
+.choir-poster { display:block; background:#eef0ed; }
+.choir-poster img { display:block; width:100%; height:auto; }
 .pill { font-size:9px; padding:4px 10px; border:1px solid var(--color-border); border-radius:20px; white-space:nowrap; color:var(--color-muted); font-weight:400; }
 .badge-row { display:flex; flex-wrap:wrap; gap:8px; }
 .badge { font-size:11px; padding:5px 10px; border:1px solid var(--color-border); color:var(--color-muted); }
@@ -147,6 +153,9 @@ html[lang='zh-Hans'] .hero-name { letter-spacing:1px; }
 .certification-summary { align-items:flex-start; flex-direction:column; gap:12px; }
 .certification-identity { gap:16px; } .certification-logo { width:70px; }
 .conference-gallery { grid-template-columns:1fr; }
+.card.choir-card { padding:20px 0; }
+.choir-card--poster { grid-template-columns:1fr; gap:20px; }
+.choir-poster { width:120px; }
 .container { padding:0 24px; } .hero { display:flex; flex-direction:column; align-items:stretch; padding:44px 0 25px; }
 .eyebrow { font-size:9px; margin-bottom:23px; } .hero-headline { font-size:clamp(32px,8.5vw,44px); letter-spacing:-1.6px; }
 .hero-name { margin-top:24px; } .hero-visual { margin-top:18px; height:400px; } .visual-caption { bottom:0; }
