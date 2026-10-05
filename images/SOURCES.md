@@ -13,4 +13,17 @@ Downloaded on 2026-10-03 from the institutions' official websites. These marks i
 
 The Full-Tuition Scholarship reuses the existing `cuhksz_logo.png` university crest. SSE's official source supplies a horizontal university-and-school wordmark, displayed above the award text to keep it readable at portfolio scale.
 
-The Auckland ambassador entry reuses the existing `UoA_Logo_White_RGB_Stacked.png`. The four `微信图片_20261003*.jpg` presentation photographs were supplied by the portfolio owner for the URC2026 conference entry. The gallery loads 640px or 1200px previews from `previews/`, selected by the browser for its display size and pixel density. Previews are resized with Lanczos filtering and encoded as lossless WebP, preserving the pixels of each resized preview without additional compression loss. The original JPEG files are unchanged and open only when a visitor selects a photograph. Lazy loading is retained.
+The Auckland ambassador entry reuses the existing `UoA_Logo_White_RGB_Stacked.png`. The four `URC-1.jpg` through `URC-4.jpg` presentation photographs were supplied by the portfolio owner for the URC2026 conference entry. The gallery loads 640px or 1200px previews from `previews/`, selected by the browser for its display size and pixel density. Previews are resized with Lanczos filtering and encoded as lossless WebP, preserving the pixels of each resized preview without additional compression loss. The original JPEG files are unchanged and open only when a visitor selects a photograph. Lazy loading is retained.
+
+
+## CUHK-SZ Chorus emblem
+
+`CUSZ-Chorus.png` is the screenshot supplied by the portfolio owner.
+`cuhksz-chorus-restored.png` is a cleaned display rendition produced with the
+built-in image editing tool on 2026-10-05, not an official vector master.
+The original screenshot remains available for comparison and future replacement.
+
+Restoration brief: remove screenshot blur and jagged edges; retain the black
+background, five grey staff lines, flowing gold curve, widely spaced CHORUS
+lettering, and the English and Chinese choir names. No additional emblems,
+notes, borders, or words.

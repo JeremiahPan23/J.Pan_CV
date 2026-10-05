@@ -64,12 +64,21 @@ the PDF through ReportLab. This is a limited renderer, not a LaTeX compiler.
 The original application ZIP remains local and is ignored by Git.
 
 Chorus photographs use responsive lossless WebP previews at 640px and 1200px widths,
-loaded lazily inside an expandable gallery. Posters use 320px lossless previews.
+loaded lazily inside a gallery that is open by default and can be collapsed.
+Posters use 320px lossless previews.
 Each links to its original supplied image. The six-video YouTube playlist was
 verified on the choir's public channel; it opens on request rather than loading
 an embedded player with the main page. The comprehensive CV includes all three
 choir experiences and performance links; the two-page research CV stays focused
 on research.
+
+High-school education is archived in an HTML comment in `index.html` and a TeX
+comment in the comprehensive CV, following the user's advisor's recommendation.
+Economics Club precedes the Physics Society in both. The four URC originals were
+renamed to `images/URC-1.jpg` through `URC-4.jpg`; their bytes and existing previews
+are unchanged. `images/CUSZ-Chorus.png` preserves the supplied emblem screenshot;
+`images/cuhksz-chorus-restored.png` is the AI-cleaned display version, not an
+official vector master.
 
 ## Traditional CVs
 

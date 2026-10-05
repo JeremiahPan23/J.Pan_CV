@@ -33,6 +33,9 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 
 ### Source decisions for this revision
 
+- High-school education is commented out in the comprehensive source for possible
+  restoration. Economics Club appears before the Physics Society, as requested.
+
 - Choir experiences are included in the comprehensive CV: School of Music Choir,
   CUHK-SZ (Fall 2025), Auckland University Student Choir (Spring 2026, confirmed by
   the user), and CUHK-SZ Chorus (Fall 2026). Chinese distinguishes the music-school

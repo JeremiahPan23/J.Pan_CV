@@ -10,7 +10,7 @@ window.PORTFOLIO_ZH = {
         '2025 Fall': '2025 年秋季',
         'Choir member · CUHK-Shenzhen': '合唱团成员 · 香港中文大学（深圳）',
         'Joined CUHK-SZ Chorus in Fall 2026, continuing my commitment to choral music alongside my studies.': '于 2026 年秋季加入香港中文大学（深圳）合唱团，在学业之外继续投入合唱艺术。',
-        'Choir photographs →': '查看合唱团照片 →',
+        'Choir photographs · show / hide →': '合唱团照片 · 展开／收起 →',
         'Choir photographs. Select a photo to view it at full size.': '合唱团照片。点击照片可查看原图。',
         'Auckland University Student Choir (AUSC)': '奥克兰大学学生合唱团（AUSC）',
         'Tenor · University of Auckland exchange': '男高音 · 奥克兰大学交流期间',
@@ -228,6 +228,7 @@ window.PORTFOLIO_ZH = {
         '© 2026 Jiaxin (Jeremiah) Pan': '© 2026 潘佳鑫'
     },
     attributes: {
+        'CUHK-SZ Chorus emblem': '香港中文大学（深圳）合唱团团徽',
         'View CUHK-SZ Chorus photograph 1 at full size': '查看合唱团照片 1 原图（新窗口）',
         'View CUHK-SZ Chorus photograph 2 at full size': '查看合唱团照片 2 原图（新窗口）',
         'View CUHK-SZ Chorus photograph 3 at full size': '查看合唱团照片 3 原图（新窗口）',
