@@ -44,7 +44,7 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
   six-video playlist are linked.
 
 - Latest user confirmation: cumulative GPA is **3.61/4.0** (2026-10-03).
-- Degree: **B.Sc. in Physics (with honours) — Expected**, **2023–2027**. The earlier Economics enrolment is background, not a B.B.A. award. First Class Honours is not asserted.
+- Degree: **B.Sc. in Physics (with Honours) — First Class Honours expected**, **2023–2027**. The earlier Economics enrolment is background, not a B.B.A. award. Expected classification, not an awarded honour: the user confirmed on 2026-10-05 that Major GPA meets 3.50, and cumulative GPA is 3.61/4.0. The applicable CUHK-SZ regulations require minimum Major GPA 3.50 and Overall GPA 3.30; final classification remains subject to the university’s assessment.
 - HSSRLM preprocessing, candidate verification and the three-structure audit are confirmed personal contributions. The 26-record registry remains project-level work.
 - User update (2026-10-04): HSSRLM is a working paper. An initial AAAI submission plan was deferred while another manuscript took priority; IJCAI/ACL are possible future venues. A collaborator has indicated that current contributions could support co-first authorship. Final author order and submission plans remain unconfirmed; do not list this as a submitted/accepted publication or confirmed co-first author credit.
 - XY project title is provisional; no invented starting year or quantified advantage over Wolff. Experimental scope remains a 4×4 lattice at one temperature.
