@@ -13,7 +13,7 @@ Downloaded on 2026-10-03 from the institutions' official websites. These marks i
 
 The Full-Tuition Scholarship reuses the existing `cuhksz_logo.png` university crest. SSE's official source supplies a horizontal university-and-school wordmark, displayed above the award text to keep it readable at portfolio scale.
 
-The Auckland education and ambassador entries use `auckland-logo-2025.svg`, extracted without changing paths or colours from the official website’s current `logo-small-new` SVG symbol on 2026-10-05. The older white PNG remains available locally. The four `URC-1.jpg` through `URC-4.jpg` presentation photographs were supplied by the portfolio owner for the URC2026 conference entry. The gallery loads 640px or 1200px previews from `previews/`, selected by the browser for its display size and pixel density. Previews are resized with Lanczos filtering and encoded as lossless WebP, preserving the pixels of each resized preview without additional compression loss. The original JPEG files are unchanged and open only when a visitor selects a photograph. Lazy loading is retained.
+The Auckland education and ambassador entries use the crest-only `auckland-crest-2025.svg`, derived from the official website’s current `logo-small-new` SVG symbol on 2026-10-05. The complete original extraction is preserved as `auckland-logo-2025.svg`. The older white PNG remains available locally. The four `URC-1.jpg` through `URC-4.jpg` presentation photographs were supplied by the portfolio owner for the URC2026 conference entry. The gallery loads 640px or 1200px previews from `previews/`, selected by the browser for its display size and pixel density. Previews are resized with Lanczos filtering and encoded as lossless WebP, preserving the pixels of each resized preview without additional compression loss. The original JPEG files are unchanged and open only when a visitor selects a photograph. Lazy loading is retained.
 
 
 ## CUHK-SZ Chorus emblem
@@ -34,3 +34,10 @@ notes, borders, or words.
 - `auckland-logo-2025.svg`: official current header logo, standalone SVG extracted from https://www.auckland.ac.nz/etc.clientlibs/uoa-digital/clientlibs/resources/img/sprite.svg?v=9#logo-small-new . The original viewBox, path geometry and official navy colour are preserved. The university announced this design on 15 April 2025: https://www.auckland.ac.nz/en/news/2025/04/15/refreshed-university-logo-unifies-brand.html .
 - `economics-club-original.jpg` and `physics-society-original.jpg`: unchanged images supplied by the portfolio owner.
 - `economics-club-restored.png` and `physics-society-restored.png`: display restorations made with the built-in image editing tool; these are not official vector masters. Restoration prompts preserve original wording, colours, geometry and composition, and remove blur, jagged edges and JPEG artifacts. The Physics Society’s grey arrow shadow is retained.
+
+
+## Crest-only Auckland asset and full Physics Society emblem (2026-10-05)
+
+- `auckland-crest-2025.svg` retains the original shield subpaths from `auckland-logo-2025.svg`; the right-hand wordmark subpaths are removed and the viewBox fits the shield. No shield geometry or colour was redrawn. Both Auckland entries display this crest-only variant.
+- `Phy_Society.jpg` is the newer complete emblem supplied by the portfolio owner, with the titles 物理学会 and CUHKSZ PHYSICAL SOCIETY.
+- `physics-society-centered-v2.png` is a display restoration produced with the built-in image editing tool. The brief preserves the original symbol, intersections, grey arrow shadow and both exact title lines; cleans blur and compression artifacts; centers the titles beneath the symbol with equal outer margins; and slightly crops unused white space. The supplied original and earlier restoration remain available. This is not an official vector master.

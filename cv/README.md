@@ -51,7 +51,9 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 - Full-tuition scholarship uses the current website/certificate record's **2023–2026** span rather than extending the old CV claim to 2027.
 - Dean's List includes AY2025–2026, with the 2026 certificate pending issuance.
 - Help Room service is a form of USTF, covering CSC1005, CSC1001 and PHY1001, 23 October–12 December 2025.
-- URC2026 is a conference presentation, not a publication or an assertion of sole authorship.
+- URC2026 is a conference presentation, not a publication. The user confirmed on 2026-10-05 that the ENG2001 paper is original single-author work and was presented by invitation. Supplied instructor feedback calls it a great quantitative paper and requests permission for anonymised classroom use; do not infer that this feedback establishes the reason for the conference invitation.
 - Both CVs use the broader `Conference` section heading and contain a clickable HTTPS link to the privacy-reviewed public paper.
 - Earlier diffusion-model work from the supplied full CV is retained as research training, without inventing a separate current project's dates.
 - The public CV copy removes unsupported machine-level precision, publication, award and independent-invention claims; no planned exchange programme or unverified research repository is added.
+
+- User confirmation (2026-10-05): the ongoing XY study is the undergraduate thesis project. Its portfolio display title remains provisional.
