@@ -57,3 +57,5 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 - The public CV copy removes unsupported machine-level precision, publication, award and independent-invention claims; no planned exchange programme or unverified research repository is added.
 
 - User confirmation (2026-10-05): the ongoing XY study is the undergraduate thesis project. Its portfolio display title remains provisional.
+
+- User confirmation (2026-10-05): Tenor in all three choir experiences. Economics Club responsibilities include member recruitment, Secretary Department team management and task delegation, cross-department coordination, mailbox and email communications, Wenjuanxing registration forms and response consolidation, EC Academic Weekly and event copy, social media, documents and event logistics. These activity updates belong to the comprehensive CV; the research-application selection has no corresponding entries.
