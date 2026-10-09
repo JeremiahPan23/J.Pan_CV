@@ -24,6 +24,8 @@ tmp/
 output/
 # Unredacted research paper: keep local; publish only papers/URC2026_Paper_Public.pdf.
 /ENG2001_Research_Paper_Final_Ver.pdf
+# Keep the original course report with student numbers and emails local.
+/PHY2650_Project_PAN_ZHU.pdf
 __pycache__/
 *.aux
 *.out

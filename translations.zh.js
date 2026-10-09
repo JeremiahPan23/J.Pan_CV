@@ -157,6 +157,7 @@ window.PORTFOLIO_ZH = {
         'Course Project · Group Research on Bell Test in Quantum Physics': '课程项目 · 量子物理中的贝尔检验小组研究',
         "(Group Leader) Led a team in exploring experimental verification of Bell's theorem; delegated tasks, co-authored final report, and delivered final presentation.": '（<strong>组长</strong>）带领团队探索贝尔定理的实验验证，安排任务、共同撰写报告并完成最终展示。',
         'Course Project · Group Research on Computational Physics (Quantum Harmonic Oscillator)': '课程项目 · 计算物理小组研究（量子谐振子）',
+        'View Course Project Report · PDF, 15 pages →': '查看课程项目报告 · PDF，15 页 →',
         'Synthesized research data and methodologies from team members to author the final report using LaTeX.': '整合组员的研究数据与方法，使用 LaTeX 撰写最终报告。',
         'Course Project · Group Research on Bose-Einstein Condensation': '课程项目 · 玻色–爱因斯坦凝聚小组研究',
         '(Group Leader) Led a team in exploring the topic of "Observation of Bose-Einstein Condensation in a Dilute Atomic Vapor"; delegated tasks, conducted literature review, co-authored presentation slides using LaTeX, and delivered final presentation.': '（<strong>组长</strong>）带领团队研究“稀薄原子蒸气中玻色–爱因斯坦凝聚的观测”，安排任务、进行文献调研，使用 LaTeX 共同制作幻灯片并完成最终展示。',

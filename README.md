@@ -48,6 +48,12 @@ The URC2026 entry links to `papers/URC2026_Paper_Public.pdf`, the privacy-review
 
 The four conference photographs use responsive lossless WebP previews in `images/previews/` at 640px and 1200px widths. The links retain the original full-resolution JPEGs. Resizing reduces detail beyond the preview resolution, while lossless encoding avoids additional compression artifacts; visitors can open the unchanged originals for full detail.
 
+The quantum harmonic oscillator course-project entry links to the 15-page
+`papers/PHY2650_Quantum_Harmonic_Oscillator_Public.pdf`. This public copy preserves
+both authors' names and the report content while permanently removing the student
+numbers on page 1 and the contact-email sentence on page 12. The original
+`PHY2650_Project_PAN_ZHU.pdf` is kept locally and ignored by Git.
+
 ## Choral music
 
 The Experience panel contains three choir entries, linked directly by `#choir`.
