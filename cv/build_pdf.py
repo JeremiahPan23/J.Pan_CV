@@ -157,7 +157,7 @@ def render(source):
         return group(text, match.end() - 1)[0]
     person_name = metadata('firstname') + ' ' + metadata('familyname')
     email = metadata('email')
-    homepage = metadata('homepage')
+    homepage = metadata('homepage').replace(r'\_', '_')
     profiles = dict(re.findall(r'\\social\[([^\]]+)\]\{([^}]+)\}', text))
     blocks = parse(text)
     size = 10.3 if research else 10.2

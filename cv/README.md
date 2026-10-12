@@ -18,6 +18,11 @@ starting on the final page. The research-application PDF remains two pages.
 
 To provide usable PDF documents, `build_pdf.py` reads the body and header directly from each `.tex` and renders a traditional two-column CV with ReportLab. It is a limited renderer, **not a LaTeX compiler**. Supported commands include `section`, `cventry`, `cvitem`, `newpage`, `itemize`, `href` and the inline formatting used here; unsupported commands cause an error. It uses Arial from Windows, and requires `reportlab` and `pypdf`.
 
+On 2026-10-13, native compilation became available. Both current sources compiled
+successfully after escaping the underscore in the homepage displayed by moderncv.
+Downloadable PDFs continue to use the source-driven renderer to preserve their
+existing layout; the built-in compilation check does not export PDF files.
+
 ```powershell
 python cv/build_pdf.py
 ```
@@ -46,7 +51,7 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 - Latest user confirmation: cumulative GPA is **3.61/4.0** (2026-10-03).
 - Degree: **B.Sc. in Physics (with Honours) — First Class Honours expected**, **2023–2027**. The earlier Economics enrolment is background, not a B.B.A. award. Expected classification, not an awarded honour: the user confirmed on 2026-10-05 that Major GPA meets 3.50, and cumulative GPA is 3.61/4.0. The applicable CUHK-SZ regulations require minimum Major GPA 3.50 and Overall GPA 3.30; final classification remains subject to the university’s assessment.
 - HSSRLM preprocessing, candidate verification and the three-structure audit are confirmed personal contributions. The 26-record registry remains project-level work.
-- User update (2026-10-04): HSSRLM is a working paper. An initial AAAI submission plan was deferred while another manuscript took priority; IJCAI/ACL are possible future venues. A collaborator has indicated that current contributions could support co-first authorship. Final author order and submission plans remain unconfirmed; do not list this as a submitted/accepted publication or confirmed co-first author credit.
+- HSSRLM is a working paper. The user confirmed on 2026-10-11 that the project team has formally confirmed co-first authorship; this supersedes the earlier provisional authorship wording. An initial AAAI submission plan was deferred while another manuscript took priority; IJCAI/ACL are possible future venues and submission plans remain under discussion. Do not list this as a submitted or accepted publication.
 - XY project title is provisional; no invented starting year or quantified advantage over Wolff. Experimental scope remains a 4×4 lattice at one temperature.
 - Full-tuition scholarship uses the current website/certificate record's **2023–2026** span rather than extending the old CV claim to 2027.
 - Dean's List includes AY2025–2026, with the 2026 certificate pending issuance.
@@ -59,3 +64,9 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 - User confirmation (2026-10-05): the ongoing XY study is the undergraduate thesis project. Its portfolio display title remains provisional.
 
 - User confirmation (2026-10-05): Tenor in all three choir experiences. Economics Club responsibilities include member recruitment, Secretary Department team management and task delegation, cross-department coordination, mailbox and email communications, Wenjuanxing registration forms and response consolidation, EC Academic Weekly and event copy, social media, documents and event logistics. These activity updates belong to the comprehensive CV; the research-application selection has no corresponding entries.
+
+- User update (2026-10-13): choir pronunciation training includes German, Cantonese,
+  Latin, Maori, and Japanese; this replaces the earlier Cantonese conversation claim
+  in both CVs. The comprehensive CV also records a passed Chinese Musicians
+  Association amateur piano Grade 8 examination and approximately 1200 Elo on
+  Duolingo against Oscar. No examination year or other rating system is inferred.
