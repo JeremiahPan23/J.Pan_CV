@@ -70,3 +70,10 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
   in both CVs. The comprehensive CV also records a passed Chinese Musicians
   Association amateur piano Grade 8 examination and approximately 1200 Elo on
   Duolingo against Oscar. No examination year or other rating system is inferred.
+
+- User update (2026-10-14): the two-page research CV now includes a compact
+  Musical Training and Performance section: passed Chinese Musicians Association
+  amateur piano Grade 8, tenor participation in all three choir experiences, two
+  public Auckland concerts, Winter Carols, and existing performance-record/video
+  links. Music-related AI is listed as a research interest, not completed music-AI
+  research. The conference entry is shortened to preserve the two-page limit.
