@@ -40,7 +40,7 @@ The enlarged hero shows only a 23×23 conceptual XY spin lattice with a moving v
 
 Keep confirmed roles separate from project-wide work, and retain provisional titles, ongoing status and scientific limitations. HSSRLM preprocessing, candidate verification and the three-structure audit are confirmed individual contributions. The metal-node registry remains project-level work; individual ownership is not asserted. No research repository links should be added without verification that the URL is appropriate for public sharing.
 
-HSSRLM is a working paper. The user confirmed on 2026-10-11 that the project team has formally confirmed co-first authorship. Submission history and plans are shown separately from completed work: the initial AAAI plan was deferred and IJCAI/ACL are possible future venues. Submission plans remain under discussion; no submitted or accepted publication is asserted.
+HSSRLM is a working paper with confirmed co-first authorship. On 2026-10-17 the user confirmed ACL as the planned submission venue, superseding the earlier tentative venue list. Public wording is manuscript in preparation for planned submission to the Annual Meeting of the Association for Computational Linguistics (ACL); not yet submitted. No conference year, track, acceptance or completed submission is inferred.
 
 Push and publish changes only when the user authorizes them. Certificate PDFs are linked from the corresponding certification, award or conference entry. Award years and conference details should follow the supplied certificates; mark certificates that have not yet been issued without adding placeholder links.
 
