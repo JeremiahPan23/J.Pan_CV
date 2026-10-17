@@ -31,6 +31,8 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 
 ## Content sync checklist
 
+2026-10-18 repository update: the computational physics report has a verified Zenodo technical-note record (DOI `10.5281/zenodo.23439036`; co-authors Jiaxin Pan and Mengxiang Zhu; deposited 2026-10-17). Preserve Spring 2025 as the coursework date and distinguish the 2026 deposit. The user reports SSRN submission 7625599 is pending platform screening; automated access returned HTTP 403. Both CVs retain Reinvention as submitted/awaiting editorial assessment and separately label SSRN screening pending. Neither repository activity establishes a peer-reviewed or conference publication.
+
 1. Update confirmed website facts in `index.html` and the matching keys in `translations.zh.js`.
 2. Update both `.tex` files; the short CV deliberately omits less relevant items.
 3. Regenerate PDFs from the updated sources, confirm the research PDF is two pages, and inspect all pages. Check website PDF links before publishing.
