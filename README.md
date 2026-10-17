@@ -46,6 +46,8 @@ Push and publish changes only when the user authorizes them. Certificate PDFs ar
 
 The URC2026 entry links to `papers/URC2026_Paper_Public.pdf`, the privacy-reviewed copy of the presented research paper. The student-number line, WeChat contact-card image and six Microsoft Forms editor URLs have been permanently removed. The unredacted original and local output folder are ignored by Git. Publish only the reviewed copy when updating this paper.
 
+The related journal manuscript, "Mathematics self confidence and STEM major choice in an undergraduate survey", is listed separately as submitted to Reinvention: an International Journal of Undergraduate Research, awaiting editorial assessment, based on the user's submission receipt. It is not listed as accepted or confirmed in external peer review. The journal entry labels the linked public PDF as the earlier course-paper version rather than the revised submission. No private dashboard link or submission files are published.
+
 The four conference photographs use responsive lossless WebP previews in `images/previews/` at 640px and 1200px widths. The links retain the original full-resolution JPEGs. Resizing reduces detail beyond the preview resolution, while lossless encoding avoids additional compression artifacts; visitors can open the unchanged originals for full detail.
 
 The quantum harmonic oscillator course-project entry links to the 15-page
