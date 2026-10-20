@@ -58,7 +58,7 @@ numbers on page 1 and the contact-email sentence on page 12. The original
 
 On 2026-10-18 the user supplied Zenodo record 23439036 for the computational physics report. Public API metadata confirms DOI `10.5281/zenodo.23439036`, technical-note resource type, creators Jiaxin Pan and Mengxiang Zhu, and deposit date 2026-10-17. The original coursework date remains Spring 2025. The remotely deposited PDF has its first-page student numbers removed but retains a contact email on page 12; it is a different file from the site's existing privacy-reviewed copy. The site keeps the local public copy and adds the Zenodo DOI separately. Repository deposit is not claimed as conference publication or peer review.
 
-The user also reports SSRN submission 7625599 is pending platform screening. The site and CVs label it accordingly, separately from the Reinvention journal submission; no posted preprint, peer review, acceptance or SSRN DOI is claimed. Automated access to the SSRN page returned HTTP 403, so the supplied link and screening status are user-reported rather than independently verified public availability.
+On 2026-10-20, the user supplied an SSRN confirmation email stating that the paper is now posted (record 7625599). The website and both CVs therefore label it as a preprint posted on SSRN, superseding the previous platform-screening status. Reinvention remains submitted and awaiting editorial assessment; SSRN posting does not establish journal acceptance or peer review. Automated public-page access remains unavailable; the posting status is supported by the supplied confirmation, and no SSRN DOI or exact posting date is inferred.
 
 ## Choral music
 

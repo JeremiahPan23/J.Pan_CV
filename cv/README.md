@@ -80,3 +80,6 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
   public Auckland concerts, Winter Carols, and existing performance-record/video
   links. Music-related AI is listed as a research interest, not completed music-AI
   research. The conference entry is shortened to preserve the two-page limit.
+
+
+2026-10-20 SSRN update: the user supplied confirmation that record 7625599 is now publicly posted. Both CVs now say preprint posted on SSRN, superseding the October 18 screening status above. Reinvention remains submitted / awaiting editorial assessment.
