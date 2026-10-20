@@ -99,3 +99,6 @@ official vector master.
 ## License
 
 MIT
+
+
+2026-10-20: Verified seven public works through ORCID 0009-0000-3877-646X and Zenodo record APIs. Added five course-writing entries and the URC preprint DOI; the numerical report retains its existing DOI. Zenodo resource types take precedence over ORCID imported labels. Bell report is omitted because no public record was confirmed. Added ORCID to both CVs. Repository renamed to Jeremiah-Pan-Personal-Website; project Pages URLs change accordingly.

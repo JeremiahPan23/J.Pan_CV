@@ -3,6 +3,26 @@
  */
 window.PORTFOLIO_ZH = {
     copy: {
+        "Open Works and Course Writing": "公开作品与课程写作",
+        "Selected undergraduate course writing, publicly archived on Zenodo in 2026. These essays, reflections and proposals are not peer-reviewed publications.": "以下为本科课程写作选集，于 2026 年公开存档至 Zenodo，包括论说文章、反思日志与写作提案，均不属于经同行评审的出版物。",
+        "Explore Course Writing · 5 works →": "浏览课程作品 · 5 项 →",
+        "ORCID · 0009-0000-3877-646X →": "ORCID · 0009-0000-3877-646X →",
+        "Zenodo Preprint · Earlier Course-Paper Version →": "Zenodo 预印本 · 早期课程论文版本 →",
+        "Walking Out of the Cave: A Reflective Journal on Plato, Aristotle and Scientific Education": "《走出洞穴》：柏拉图、亚里士多德与科学教育反思",
+        "Reflective journal · GFN1000 · 2026 deposit": "反思日志 · GFN1000 · 2026 年存档",
+        "DOI: 10.5281/zenodo.23448898 →": "DOI: 10.5281/zenodo.23448898 →",
+        "Alcibiades' Role in Symposium: Unveiling the Power of Socratic Love": "《会饮篇》中阿尔西比亚德的角色：苏格拉底式爱的力量",
+        "Reflective journal · GFH1000 · 2026 deposit": "反思日志 · GFH1000 · 2026 年存档",
+        "DOI: 10.5281/zenodo.23449042 →": "DOI: 10.5281/zenodo.23449042 →",
+        "Boundless Love and Salvation: Reflections on Mark and the Bhagavad Gita": "无尽的爱与救赎：《马可福音》与《薄伽梵歌》反思",
+        "DOI: 10.5281/zenodo.23449095 →": "DOI: 10.5281/zenodo.23449095 →",
+        "Sadomasochism in Wang Xiaobo's The Golden Age: A Micro-Level Exploration of Social Power": "《黄金时代》：虐恋——人类社会权力机制的微观探索",
+        "Literary essay · CHI1000 · 2026 deposit": "文学评论 · CHI1000 · 2026 年存档",
+        "DOI: 10.5281/zenodo.23447498 →": "DOI: 10.5281/zenodo.23447498 →",
+        "Reconsidering Yuan Shikai's Historical Reputation: A Book Proposal": "重新审视袁世凯的历史评价：专书写作计划",
+        "Book proposal · 2026 deposit": "专书写作提案 · 2026 年存档",
+        "DOI: 10.5281/zenodo.23447654 →": "DOI: 10.5281/zenodo.23447654 →",
+
         'Beyond physics and research, I have an unwavering love of the arts. Choral singing brings that love into shared practice, community, and performance.': '在物理学习与科研之外，我始终热爱艺术。合唱让我在共同练习、音乐交流与舞台演出中延续这份热爱。',
         'CUHK-SZ Chorus': '香港中文大学（深圳）合唱团',
         '2026 Fall': '2026 年秋季',
