@@ -3,6 +3,9 @@
  */
 window.PORTFOLIO_ZH = {
     copy: {
+        '2026 (Fall) · Ongoing': '2026 年秋季 · 进行中',
+        'Reappointed as a USTF in the Student Help Room for 21 October–18 December 2026, supporting MAT1001 (Calculus), CSC1005 (Intro. to Computer Engineering), and PHY1001 (Mechanics).': '再次获聘为本科生教学助理（USTF），于 2026 年 10 月 21 日至 12 月 18 日在 Student Help Room（学生答疑室）为 MAT1001（微积分）、CSC1005（计算机工程导论）和 PHY1001（力学）提供课程答疑与辅导。',
+
         "Open Works and Course Writing": "公开作品与课程写作",
         "Selected undergraduate course writing, publicly archived on Zenodo in 2026. These essays, reflections and proposals are not peer-reviewed publications.": "以下为本科课程写作选集，于 2026 年公开存档至 Zenodo，包括论说文章、反思日志与写作提案，均不属于经同行评审的出版物。",
         "Explore Course Writing · 5 works →": "浏览课程作品 · 5 项 →",
