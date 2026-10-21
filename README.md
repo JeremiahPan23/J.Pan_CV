@@ -102,3 +102,5 @@ MIT
 
 
 2026-10-20: Verified seven public works through ORCID 0009-0000-3877-646X and Zenodo record APIs. Added five course-writing entries and the URC preprint DOI; the numerical report retains its existing DOI. Zenodo resource types take precedence over ORCID imported labels. Bell report is omitted because no public record was confirmed. Added ORCID to both CVs. Repository name restored to J.Pan_CV. Preserve the existing project Pages URL because it is already used in applications; do not rename this repository without preserving that URL.
+
+2026-10-21: Chinese course-work display titles checked against the public PDFs in Zenodo records 23448898, 23449042, 23449095 and 23447654. Preserve the Yuan Shikai proposal's original Chinese title and wordplay: 袁大头是冤大头？！——被历史误解的袁世凯. The three reflective journals have English-only original titles; their Chinese display names translate those originals without repository-added explanatory subtitles.
