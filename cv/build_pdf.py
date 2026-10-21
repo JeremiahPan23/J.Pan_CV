@@ -158,6 +158,7 @@ def render(source):
     person_name = metadata('firstname') + ' ' + metadata('familyname')
     email = metadata('email')
     homepage = metadata('homepage').replace(r'\_', '_')
+    extra_info = metadata('extrainfo')
     profiles = dict(re.findall(r'\\social\[([^\]]+)\]\{([^}]+)\}', text))
     blocks = parse(text)
     size = 10.3 if research else 10.2
@@ -223,6 +224,8 @@ def render(source):
             contact = f'<link href="mailto:{escape(email)}">{escape(email)}</link>'
             story.append(Paragraph(contact, body_style))
             links = f'<link href="https://{escape(homepage)}">Portfolio</link> · <link href="https://github.com/{escape(profiles["github"])}">GitHub</link> · <link href="https://www.linkedin.com/in/{escape(profiles["linkedin"])}">LinkedIn</link>'
+            if extra_info:
+                links += " · " + inline(extra_info)
             story.append(Paragraph(links, body_style))
             story.append(Spacer(1, 4))
         elif name == 'section':
