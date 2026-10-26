@@ -82,7 +82,6 @@ window.PORTFOLIO_ZH = {
         'View Scholarship Certificate →': '查看奖学金证书 →',
         "View Dean's List Certificate →": '查看院长荣誉录证书 →',
         'Recognized for academic excellence in AY2025–2026.': '表彰 2025—2026 学年的优异学业表现。',
-        'Certificate pending issuance.': '证书待发放。',
         'Overview': '首页',
         'Research': '研究',
         'Education': '教育',

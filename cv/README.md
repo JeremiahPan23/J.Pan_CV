@@ -56,7 +56,7 @@ The script checks that the research PDF has exactly two pages. Re-render and vis
 - HSSRLM is a working paper with confirmed co-first authorship. The user confirmed on 2026-10-17 that ACL is the planned submission venue, superseding the earlier tentative venue list. Both CVs state manuscript in preparation for planned submission to the Annual Meeting of the Association for Computational Linguistics (ACL); not yet submitted. Do not infer a conference year or track, completed submission, or acceptance.
 - XY project title is provisional; no invented starting year or quantified advantage over Wolff. Experimental scope remains a 4×4 lattice at one temperature.
 - Full-tuition scholarship uses the current website/certificate record's **2023–2026** span rather than extending the old CV claim to 2027.
-- Dean's List includes AY2025–2026, with the 2026 certificate pending issuance.
+- Dean's List includes AY2025–2026; the 2026 certificate has been issued and is linked from the website.
 - Help Room service is a form of USTF, covering CSC1005, CSC1001 and PHY1001, 23 October–12 December 2025.
 - URC2026 is a conference presentation, not a publication. The user confirmed on 2026-10-05 that the ENG2001 paper is original single-author work and was presented by invitation. Supplied instructor feedback calls it a great quantitative paper and requests permission for anonymised classroom use; do not infer that this feedback establishes the reason for the conference invitation.
 - The comprehensive CV retains a separate `Conference` section; the two-page research CV combines the related manuscript and presentation under `Manuscript and Conference`. Both link to the privacy-reviewed earlier course paper.
