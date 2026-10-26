@@ -10,6 +10,7 @@ A bilingual research portfolio built with static HTML, CSS and JavaScript. No bu
 - `script.js`: language selection, section navigation and project deep links.
 - `visuals.js`: Canvas2D spin fields, crystal geometry and subtle pointer parallax.
 - `images/`: existing portraits, logos and icons.
+- `papers/`: reviewed public PDFs; see the [public materials catalogue](papers/README.md) for reports, course writing and conference slides.
 
 ## Preview and checks
 
