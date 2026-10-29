@@ -227,6 +227,10 @@ def render(source):
             if extra_info:
                 links += " · " + inline(extra_info)
             story.append(Paragraph(links, body_style))
+            website = f'https://{homepage}'
+            story.append(Paragraph(
+                f'Website: <link href="{escape(website)}">{escape(website)}</link>',
+                body_style))
             story.append(Spacer(1, 4))
         elif name == 'section':
             story.append(Paragraph(inline(args[0]), heading_style))
