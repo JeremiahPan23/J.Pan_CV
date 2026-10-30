@@ -71,7 +71,7 @@ def main():
             with Image.open(ROOT / filename) as im:
                 scale = min((cell-12)/im.width, 203/im.height)
                 iw, ih = im.width*scale, im.height*scale
-                # Embed the supplied JPEG stream directly; no decode/re-encode.
+                # JPEG photos are embedded directly; poster PNGs are lossless assets.
                 pdf.drawImage(str(ROOT / filename), x+(cell-iw)/2, top-(215+ih)/2,
                               width=iw, height=ih)
             paragraph(pdf, caption, x, top-220, cell, 8, '#516a60')

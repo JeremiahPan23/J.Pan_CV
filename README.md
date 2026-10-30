@@ -78,8 +78,15 @@ The original application ZIP remains local and is ignored by Git.
 
 Chorus photographs use responsive lossless WebP previews at 640px and 1200px widths,
 loaded lazily inside a gallery that is open by default and can be collapsed.
-Posters use 320px lossless previews.
-Each links to its original supplied image. The six-video YouTube playlist was
+Posters use 320px lossless previews; the AUSC May concert also has a 640px preview.
+The May concert preview uses a clarity-enhanced derivative of the user-supplied
+digital poster and links to the unchanged digital source. The AI-enhanced image
+is a display derivative, not an official master. The performance-record PDF uses
+the digital source rather than this derivative. Its ANZAC Eve poster was downloaded
+from the [official Art of Remembrance 2026 event page](https://www.kahuistdavids.nz/events/art-of-remembrance-2026);
+the downloaded 2500 × 3535 PNG is retained, with a resized lossless PNG used in the
+PDF. Both photographed originals remain in `arts/ausc/assets/`.
+Other previews link to their original supplied images. The six-video YouTube playlist was
 verified on the choir's public channel; it opens on request rather than loading
 an embedded player with the main page. The comprehensive CV includes all three
 choir experiences and performance links; the two-page research CV stays focused
