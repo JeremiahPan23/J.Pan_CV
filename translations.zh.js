@@ -147,6 +147,7 @@ window.PORTFOLIO_ZH = {
         'Completed coursework in physics and neuroscience; enhanced cross-cultural academic communication and independent learning skills.': '完成物理与神经科学课程，提升跨文化学术交流和自主学习能力。',
         'University of Auckland · Auckland, New Zealand': '奥克兰大学 · 新西兰奥克兰',
         'Explore Machine Learning Coursework · COMPSCI 361 →': '查看机器学习课程项目 · COMPSCI 361 →',
+        'View Auckland Study Abroad Sharing Slides (PDF) →': '查看奥克兰境外学习分享会幻灯片（PDF） →',
         'Nominated by CUHK-SZ; completed advanced coursework in Physics, Computer Science, and AI (COMPSCI 361, COMPSCI 220).': '由香港中文大学（深圳）提名，完成物理、计算机科学与人工智能的进阶课程，包括 COMPSCI 361 和 COMPSCI 220。',
         'Ongoing Research Projects': '进行中的研究项目',
         'Undergraduate Thesis · The Chinese University of Hong Kong, Shenzhen · Supervised by Prof. ZHOU Kai': '本科毕业项目（毕业论文）· 香港中文大学（深圳） · 导师：ZHOU Kai 教授',
