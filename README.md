@@ -1,5 +1,7 @@
 # Jiaxin Pan — Physics & AI for Science
 
+2026-11-04 OAL sharing update: `papers/Auckland_Study_Abroad_Sharing_2026.pdf` is linked from both the Auckland Visiting Student entry and the Study Abroad Student Ambassador experience. Chinese link label: 查看奥克兰境外学习分享会幻灯片（PDF） →. Both live links were verified in Chinese, with zero missing translations. Translation and navigation resource version parameters were refreshed to avoid reusing cached files after recent updates. Do not infer additional event dates or CV changes from hosting slides.
+
 A bilingual research portfolio built with static HTML, CSS and JavaScript. No build step is required.
 
 ## Files
