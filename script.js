@@ -13,6 +13,11 @@
     const translations = new Map(Object.entries(zh.copy).map(([key, value]) => [canonical(key), value]));
     const nodes = Array.from(document.querySelectorAll('h1,h2,h3,h4,p,li,summary,.badge,.pill,.edu-years,.tab-label,.visual-label,.text-link,.button-primary,.skip-link,.cert-link a')).map(element => ({ element, english: element.innerHTML, key: keyFor(element) }));
     const attributes = Array.from(document.querySelectorAll('[aria-label],[alt]')).flatMap(element => ['aria-label', 'alt'].filter(name => element.hasAttribute(name)).map(name => ({ element, name, english: element.getAttribute(name) })));
+    const localizedLinks = Array.from(document.querySelectorAll('a[data-href-zh]'), element => ({
+        element,
+        englishHref: element.getAttribute('href'),
+        chineseHref: element.dataset.hrefZh
+    }));
     const brand = document.querySelector('.site-brand');
     const englishBrand = brand.innerHTML;
     const englishTitle = document.title;
@@ -37,6 +42,9 @@
         document.documentElement.dataset.language = next;
         nodes.forEach(({ element, english, key }) => { element.innerHTML = next === 'zh' && translations.has(key) ? translations.get(key) : english; });
         attributes.forEach(({ element, name, english }) => { element.setAttribute(name, next === 'zh' ? (zh.attributes[english] || english) : english); });
+        localizedLinks.forEach(({ element, englishHref, chineseHref }) => {
+            element.setAttribute('href', next === 'zh' ? chineseHref : englishHref);
+        });
         brand.innerHTML = next === 'zh' ? '潘佳鑫<span class="brand-dot" aria-hidden="true">.</span>' : englishBrand;
         document.title = next === 'zh' ? zh.title : englishTitle;
         metadata.forEach(({ element, english, title }) => { element.content = next === 'zh' ? (title ? zh.title : zh.description) : english; });
